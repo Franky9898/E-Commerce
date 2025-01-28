@@ -28,23 +28,22 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                    <!-- Icone, flex column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
+                    <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
                     <div class="d-flex align-items-start me-auto flex-column flex-md-row">
                         <div class="d-flex align-items-center mt-2 ms-4 mb-2 mb-md-0 mt-md-0">
                             <i class="fa-solid fa-user fa-lg"></i>
                             <p class="mb-0 ms-2">Login</p>
                         </div>
-                        <div class="d-flex align-items-center ms-4">
+                        <div class="d-flex align-items-center ms-4 mb-2">
                             <i class="fa-solid fa-cart-shopping fa-lg"></i>
                             <p class="mb-0 ms-2">Carrello</p>
                         </div>
                         <!-- Dropdown Menu per i bottoni su schermi piccoli -->
                         <ul class="navbar-nav ms-4 mb-2 mb-md-0 d-md-none">
                             <li class="nav-item">
-                                <a class="nav-link dropdown-toggle btn btn-primary text-white w-100  text-center"
-                                    href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0d6efd; border: none;">
-                                    Menu Bottoni
-                                </a>
+                                <button class="dropdown-toggle btn btn-primary w-100 text-center" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Menu bottoni
+                                  </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Bottone 1</a></li>
                                     <li><a class="dropdown-item" href="#">Bottone 2</a></li>
@@ -62,21 +61,19 @@
             </div>
         </nav>
         <!-- Seconda riga con i bottoni -->
-        <nav class="d-none d-md-block navbar navbar-expand-md bg-body-tertiary">
-            <div class="container justify-content-center">
-                <div class="row g-2">
+        <nav class="d-none d-md-flex navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid justify-content-evenly">
+                <div class="row">
                     <div class="col-0 col-md-1"></div>
                     <div class="col-0 col-md-1"></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 1</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 2</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 3</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 4</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 5</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 6</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 7</button></div>
-                    <div class="col-0 col-md-1"><button class="btn btn-primary w-100">Bottone 8</button></div>
-                    <div class="col-0 col-md-1"></div>
-                    <div class="col-0 col-md-1"></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 1</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 2</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 3</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 4</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 5</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 6</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 7</button></div>
+                    <div class="col-0 col-md-1"><button class="btn btn-primary w-90 btn-sm text-nowrap mx-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .65rem;">Bottone 8</button></div>
                 </div>
             </div>
         </nav>
