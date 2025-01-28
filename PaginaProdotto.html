@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Pagina Prodotto</title>
+    <!-- Collegamento a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Collegamento al file CSS personalizzato -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Galleria immagini a sinistra -->
+            <div class="col-md-6">
+                <div class="gallery">
+                    <div class="main-image">
+                        <img src="https://placehold.co/600x400/png" alt="Prodotto" id="mainImage">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="https://placehold.co/600x400/png" alt="Thumbnail 1" class="thumbnail" onclick="cambiaImmagine('https://placehold.co/600x400/000000/FFFFFF/png')">
+                        <img src="https://placehold.co/600x400/png" alt="Thumbnail 2" class="thumbnail" onclick="cambiaImmagine('https://placehold.co/600x400/orange/white/png')">
+                        <img src="https://placehold.co/600x400/png" alt="Thumbnail 3" class="thumbnail" onclick="cambiaImmagine('https://placehold.co/600x400/black/blue/png')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sezione sticky a destra -->
+            <div class="col-md-6 sticky-sidebar">
+                <div class="product-info">
+                    <h1>Nome Prodotto</h1>
+                    <p class="price">€ 99,99</p>
+                    <button class="btn btn-primary">Aggiungi al carrello</button>
+                    <p class="description">Piccola descrizione del prodotto.</p>
+                    <div class="details">
+                        <h3>Dettagli Prodotto</h3>
+                        <ul>
+                            <li>Materiale: Cotone</li>
+                            <li>Colore: Rosso</li>
+                            <li>Taglia: M</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra laterale a comparsa -->
+        <div class="sidebar">
+            <button class="btn btn-secondary" onclick="apriSidebar()">Maggiori informazioni</button>
+            <div class="sidebar-content">
+                <h3>Maggiori Informazioni</h3>
+                <p>Informazioni dettagliate sul prodotto.</p>
+                <button class="btn btn-close" onclick="chiudiSidebar()"></button>
+            </div>
+        </div>
+
+        <!-- Carosello prodotti correlati -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2>Prodotti Correlati</h2>
+                <div id="carouselCorrelati" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="" class="d-block w-100" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/300/FF0000" class="d-block w-100" alt="Prodotto 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/300/00FF00" class="d-block w-100" alt="Prodotto 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCorrelati" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCorrelati" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carosello prodotti in offerta -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2>Prodotti in Offerta</h2>
+                <div id="carouselOfferta" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/300/0000FF" class="d-block w-100" alt="Offerta 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/300/FFFF00" class="d-block w-100" alt="Offerta 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/300/FF00FF" class="d-block w-100" alt="Offerta 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfferta" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselOfferta" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collegamento a Bootstrap JS e dipendenze -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Collegamento al file JavaScript personalizzato -->
+    <script src="script.js"></script>
+</body>
+</html>
