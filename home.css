@@ -4,14 +4,23 @@
     justify-content: center;
     flex-wrap: nowrap;  /* Evita che le cards vadano a capo */
   }
-  
+  .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    display:inline-block;
+  }
 
   .carousel-caption {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: red;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     display: flex;
