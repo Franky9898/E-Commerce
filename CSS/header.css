@@ -2,3 +2,40 @@
 form.d-flex {
     width: 70%;
 }
+.dropdown:hover .dropdown-menu {
+}
+.dropdown-menu {
+    border-radius: 0;
+    border: none;
+    padding: 0.5em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 769px) {
+    .dropdown-menu.show {
+        display: flex;
+    }
+}
+
+.dropdown-menu .big-menu li:first-child a {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #080606;
+}
+
+.dropdown-menu li a {
+    padding: 0.5em 1em;
+    color: #EEEEEE;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-menu.show {
+        max-height: 40vh;
+        overflow-y: scroll;
+    }
+}
