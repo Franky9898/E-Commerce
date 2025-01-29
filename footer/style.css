@@ -5,3 +5,34 @@
 .text-custom {
   color: #eeeeee;
 }
+ul.nav.flex-column {
+  --bs-nav-link-hover-color: none;
+}
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Aggiungi queste regole per modificare l'effetto focus sugli input */
+.form-control:focus {
+  border-color: #8e1616; /* Colore del bordo quando l'input è in focus */
+  box-shadow: 0 0 0 0.25rem rgba(142, 22, 22, 0.25); /* Ombra del box quando l'input è in focus */
+}
+
+.input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: none;
+  border: 1px solid #ced4da;
+}
+
+.btn-primary {
+  background: none;
+  border: 1px solid #ced4da;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #8e1616; /* Colore di sfondo al passaggio del mouse */
+  border-color: #eeeeee;
+}
