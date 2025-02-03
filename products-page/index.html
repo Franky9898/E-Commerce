@@ -9,7 +9,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link href="style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
@@ -21,48 +20,52 @@
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="jewelery"
               id="flexCheckChecked"
-              checked
+              onchange="filterCheck(this, 'jewelery')"
+              unchecked
             />
             <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
+              Jewelery
             </label>
           </div>
           <div class="form-check">
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="electronics"
               id="flexCheckChecked"
-              checked
+              onchange="filterCheck(this, 'electronics')"
+              unchecked
             />
             <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
+              Electronics
             </label>
           </div>
           <div class="form-check">
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="men's clothing"
               id="flexCheckChecked"
-              checked
+              onchange="filterCheck(this, 'men\'s clothing')"
+              unchecked
             />
             <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
+              Men's clothing
             </label>
           </div>
           <div class="form-check">
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="women's clothing"
               id="flexCheckChecked"
-              checked
+              onchange="filterCheck(this, 'women\'s clothing')"
+              unchecked
             />
             <label class="form-check-label" for="flexCheckChecked">
-              Checked checkbox
+              Women's clothing
             </label>
           </div>
           <hr />
@@ -149,6 +152,10 @@
             <label class="form-check-label" for="inlineCheckbox3">5</label>
           </div>
         </div>
+        <div class="col row gap-3 justify-content-center" id="container-cards">
+
+          </div>
+        </div>
       </div>
     </div>
     <script
@@ -156,5 +163,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
