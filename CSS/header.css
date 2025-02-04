@@ -47,9 +47,6 @@ form.d-flex
     background-image: none;
 }
 
-.navbar-toggler-icon::before
-{}
-
 /*Personalizzazione barra di ricerca */
 .form-control
 {
