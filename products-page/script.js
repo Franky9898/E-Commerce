@@ -1,3 +1,5 @@
+allProducts = [];
+
 function fetchAllProducts()
 {
   fetch("https://fakestoreapi.com/products")
@@ -5,6 +7,7 @@ function fetchAllProducts()
     .then((products) =>
     {
       console.log(products);
+      allProducts = products;
       displayProducts(products);
     })
     .catch((error) => console.error("Errore nel recupero dei prodotti", error));
@@ -35,26 +38,34 @@ function displayProducts(products)
   ).innerHTML = `<div class="row">${product}</div>`;
 }
 
-function categoryFilter() 
+function categoryFilter(products) 
 {
   const checkedCheckboxes = Array.from(document.querySelectorAll('input[id="flexCheckChecked"]:checked')); // Mette in un array le checkbox selezionate
   const selectedCategories = checkedCheckboxes.map(checkbox => checkbox.value); // Ottiene le categorie selezionate dai valori assegnati alle checkbox
-  if (selectedCategories.length === 0) 
-  {
-    fetchAllProducts();
-    return;
-  }
-  // Per ogni prodotto, se nelle categorie selezionate c'è la categoria del prodotto, rimuove il display none, altrimenti lo aggiunge
-  allProducts.forEach(product =>
-  {
-    if (selectedCategories.includes(product.category))
-    {
-      document.getElementById(product.id).classList.remove('d-none');
-    } else
-    {
-      document.getElementById(product.id).classList.add('d-none');
-    }
-  });
+  if (selectedCategories.length === 0)
+    return products;
+
+  return products.filter(product => selectedCategories.includes(product.category)); // Ritorna i prodotti che appartengono a una categoria selezionata
+}
+
+function priceFilter(products)
+{
+  if (document.getElementById("prezzoCrescente").checked)
+    return products.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+
+  if (document.getElementById("prezzoDecrescente").checked)
+    return products.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+
+  return products;
+}
+
+
+function filterProducts()
+{
+  let filteredProducts = allProducts;
+  filteredProducts = categoryFilter(filteredProducts);
+  filteredProducts = priceFilter(filteredProducts);
+  displayProducts(filteredProducts);
 }
 
 document.addEventListener("DOMContentLoaded", () =>

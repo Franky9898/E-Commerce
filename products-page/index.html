@@ -16,28 +16,28 @@
           <div class="form-check">
             <h5>Categorie prodotti</h5>
             <input class="form-check-input" type="checkbox" value="jewelery" id="flexCheckChecked"
-              onchange="categoryFilter()" unchecked />
+              onchange="filterProducts()" unchecked />
             <label class="form-check-label" for="flexCheckChecked">
               Jewelery
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="electronics" id="flexCheckChecked"
-              onchange="categoryFilter()" unchecked />
+              onchange="filterProducts()" unchecked />
             <label class="form-check-label" for="flexCheckChecked">
               Electronics
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="men's clothing" id="flexCheckChecked"
-              onchange="categoryFilter()" unchecked />
+              onchange="filterProducts()" unchecked />
             <label class="form-check-label" for="flexCheckChecked">
               Men's clothing
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="women's clothing" id="flexCheckChecked"
-              onchange="categoryFilter()" unchecked />
+              onchange="filterProducts()" unchecked />
             <label class="form-check-label" for="flexCheckChecked">
               Women's clothing
             </label>
@@ -50,13 +50,13 @@
           <hr />
           <div class="form-check">
             <h5>Prezzo</h5>
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="prezzoCrescente" onclick="filterProducts()"/>
             <label class="form-check-label" for="flexRadioDefault1">
               Prezzo crescente
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="prezzoDecrescente" onclick="filterProducts()"/>
             <label class="form-check-label" for="flexRadioDefault2">
               Prezzo decrescente
             </label>
