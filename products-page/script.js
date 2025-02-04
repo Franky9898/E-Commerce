@@ -1,4 +1,3 @@
-let allProducts = [];
 function fetchAllProducts()
 {
   fetch("https://fakestoreapi.com/products")
@@ -6,7 +5,6 @@ function fetchAllProducts()
     .then((products) =>
     {
       console.log(products);
-      allProducts = products; // Per utilizzarlo nella funzione categoryFilter
       displayProducts(products);
     })
     .catch((error) => console.error("Errore nel recupero dei prodotti", error));
@@ -43,7 +41,7 @@ function categoryFilter()
   const selectedCategories = checkedCheckboxes.map(checkbox => checkbox.value); // Ottiene le categorie selezionate dai valori assegnati alle checkbox
   if (selectedCategories.length === 0) 
   {
-    allProducts;
+    fetchAllProducts();
     return;
   }
   // Per ogni prodotto, se nelle categorie selezionate c'è la categoria del prodotto, rimuove il display none, altrimenti lo aggiunge
