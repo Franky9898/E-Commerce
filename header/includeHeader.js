@@ -1,0 +1,350 @@
+document.write(`
+     <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#"><img src="https://placehold.co/100x50" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa-solid fa-bars fa-lg"></i>
+                    </span>
+                </button>
+                <!-- Barra di ricerca-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex justify-content-center w-100" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
+                    <div class="d-flex align-items-start me-auto flex-column flex-md-row">
+                        <div class="d-flex align-items-center mt-2 ms-4 mb-2 mb-md-0 mt-md-0">
+                            <i class="fa-solid fa-user fa-lg"></i>
+                            <p class="mb-0 ms-2" id="login-button">Login</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4 mb-2">
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                            <p class="mb-0 ms-2" id="cart-button">Carrello</p>
+                        </div>
+                        <!-- Dropdown Menu per i bottoni su schermi piccoli -->
+                        <ul class="navbar-nav ms-4 mb-2 mb-md-0 d-md-none">
+                            <li class="nav-item dropdown">
+                                <button class="dropdown-toggle btn btn-primary text-center"
+                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                    type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Menu Categorie
+                                </button>
+                                <!-- Bottoni dentro il bottone -->
+                                <ul class="dropdown-menu">
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Gioielli
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Bracciali</a></li>
+                                        <li><a class="dropdown-item" href="#">Anelli</a></li>
+                                        <li><a class="dropdown-item" href="#">Orecchini</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Elettronica
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Hard disk</a></li>
+                                        <li><a class="dropdown-item" href="#">Monitor</a></li>
+                                        <li><a class="dropdown-item" href="#">Computer</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Vestiti Donna
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Magliette</a></li>
+                                        <li><a class="dropdown-item" href="#">Giacche</a></li>
+                                        <li><a class="dropdown-item" href="#">Sciarpe</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Vestiti uomo
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Magliette</a></li>
+                                        <li><a class="dropdown-item" href="#">Giacche</a></li>
+                                        <li><a class="dropdown-item" href="#">Mutande</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        bottone Grosso
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        bottone Grosso
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        bottone Grosso
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </ul>
+                                    <button class="dropdown-toggle btn btn-primary  text-center"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        bottone Grosso
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action 8</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Seconda riga con i bottoni-->
+        <nav class="d-none d-md-flex navbar navbar-expand-md  ">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-md-0 mx-auto">
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Gioielli
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Bracciali</a></li>
+                                <li><a class="dropdown-item" href="#">Bracciale 1</a></li>
+                                <li><a class="dropdown-item" href="#">Bracciale 2</a></li>
+                                <li><a class="dropdown-item" href="#">Bracciale 3</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Anelli</a></li>
+                                <li><a class="dropdown-item" href="#">Anello 1</a></li>
+                                <li><a class="dropdown-item" href="#">Anello 2</a></li>
+                                <li><a class="dropdown-item" href="#">Anello 3</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Orecchini</a></li>
+                                <li><a class="dropdown-item" href="#">Orecchini 1</a></li>
+                                <li><a class="dropdown-item" href="#">Orecchini 2</a></li>
+                                <li><a class="dropdown-item" href="#">Orecchini 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Elettronica
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Hard Disk</a></li>
+                                <li><a class="dropdown-item" href="#">HDD 1</a></li>
+                                <li><a class="dropdown-item" href="#">SSD</a></li>
+                                <li><a class="dropdown-item" href="#">HDD 2</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Monitor</a></li>
+                                <li><a class="dropdown-item" href="#">Monitor</a></li>
+                                <li><a class="dropdown-item" href="#">TV 1</a></li>
+                                <li><a class="dropdown-item" href="#">Tv 2</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Computer</a></li>
+                                <li><a class="dropdown-item" href="#">Desktop</a></li>
+                                <li><a class="dropdown-item" href="#">Notebook 1</a></li>
+                                <li><a class="dropdown-item" href="#">Notebook 2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Vestiti Donna
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Magliette</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 1</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 2</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 3</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Giacche</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 1</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 2</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 3</a></li> 
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Scarpe</a></li>
+                                <li><a class="dropdown-item" href="#">Scarpe 1</a></li>
+                                <li><a class="dropdown-item" href="#">Scarpe 2</a></li>
+                                <li><a class="dropdown-item" href="#">Scarpa</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Vestiti Uomo
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Magliette</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 1</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 2</a></li>
+                                <li><a class="dropdown-item" href="#">Maglietta 3</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Giacche</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 1</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 2</a></li>
+                                <li><a class="dropdown-item" href="#">Giacca 3</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Mutande</a></li>
+                                <li><a class="dropdown-item" href="#">Mutande 1</a></li>
+                                <li><a class="dropdown-item" href="#">Mutande 2</a></li>
+                                <li><a class="dropdown-item" href="#">Mutande 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Action 7</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                            <ul class="big-menu">
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Action 8</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            `);

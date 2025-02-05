@@ -88,6 +88,42 @@ function filterProducts()
   displayProducts(filteredProducts);
 }
 
+document.addEventListener("DOMContentLoaded", function ()
+{
+  const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
+  const divSep = document.getElementById("divisoreHeader"); 
+  let openDropdown = null; // Tiene traccia di quale menù è aperto (una boolean non funziona per qualche motivo)
+  if (menuItems.length > 0)
+  {
+    menuItems.forEach(menuItem =>
+    {
+      menuItem.addEventListener("click", function ()
+      {
+        if (window.innerWidth >= 768)
+        {
+          if (openDropdown === menuItem)
+          {
+            divSep.style.height = "100px"; // Il div si riduce
+            openDropdown = null;
+          } else
+          {
+            divSep.style.height = "250px"; // Il div si allarga
+            openDropdown = menuItem;
+          }
+        }
+      });
+    });
+  }
+  window.addEventListener("resize", function () // Quando la finestra si riduce, il div si riduce a prescindere
+  {
+    if (window.innerWidth < 768)
+    {
+      divSep.style.height = "50px";
+      openDropdown = null;
+    }
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () =>
 {
   fetchAllProducts();
