@@ -114,7 +114,7 @@ form.d-flex
     background: #080606;
 }
 
-/* Personalizzazione delle scritte, principalmente nella seconda barra  */
+/* Personalizzazione delle scritte, principalmente nella seconda barra */
 .nav-item.dropdown .dropdown-toggle
 {
     font-size: 12px;
@@ -138,7 +138,7 @@ form.d-flex
     margin: 0 0.5em;
     border-radius: 4px;
     flex: 1;
-    /* Serve per avere il bordo dentro dropdown della stessa grandezza per ogni sottomenu*/
+    /* Serve per avere il bordo dentro dropdown della stessa grandezza per ogni sottomenu */
 }
 
 .dropdown-menu ul li a
@@ -159,13 +159,7 @@ form.d-flex
     border-radius: 4px;
 }
 
-/* Rimuove l'effetto hover sul capitolo */
-.dropdown-menu ul li:first-child a:hover
-{
-    background-color: rgba(255, 255, 255, 0);
-    color: #EEEEEE;
-    border-radius: 4px;
-}
+
 
 .dropdown-menu ul li a:active
 {
@@ -177,6 +171,8 @@ form.d-flex
 
 @media screen and (min-width: 769px)
 {
+
+
 
     /* Creazione big menu */
     .nav-item .dropdown-menu
@@ -225,6 +221,14 @@ form.d-flex
         font-weight: bold;
         font-size: 1.2em;
         color: #EEEEEE;
+    }
+
+    /* Rimuove l'effetto hover sul capitolo */
+    .dropdown-menu ul li:first-child a:hover
+    {
+        background-color: rgba(255, 255, 255, 0);
+        color: #EEEEEE;
+        border-radius: 4px;
     }
 }
 
@@ -278,7 +282,7 @@ form.d-flex
     /* Sfondo del menu a tendina */
     ul.dropdown-menu.show
     {
-        background: #D84040;
+        background: #EEEEEE;
         border-radius: 4px;
     }
 
@@ -320,7 +324,7 @@ form.d-flex
     /* Personalizzazione del sottomenu per renderlo diverso dagli altri */
     .dropdown-menu .dropdown-menu
     {
-        background-color: #8E1616 !important;
+        background-color: #080606 !important;
         border: none;
         color: #EEEEEE !important;
         border-radius: 4px;
@@ -334,7 +338,8 @@ form.d-flex
 
     .dropdown-menu .dropdown-menu a:hover
     {
-        background-color: #D84040 !important;
-        color: #EEEEEE !important;
+        border-color: #080606;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
     }
 }
