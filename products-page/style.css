@@ -1,0 +1,29 @@
+.btn-primary {
+  background-color: #8e1616;
+  border: 1px solid #ced4da;
+  color: #ced4da;
+}
+.btn-primary:hover {
+  background-color: #8e1616; /* Colore di sfondo al passaggio del mouse */
+  border-color: #eeeeee;
+}
+
+.size-6 {
+  color: #8e1616;
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#modal {
+
+}
+.modal-dialog {
+    z-index: 1000;
+}
