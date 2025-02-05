@@ -1,6 +1,6 @@
 .btn-primary {
   background-color: #8e1616;
-  border: 1px solid #ced4da;
+  border: inherit;
   color: #ced4da;
 }
 .btn-primary:hover {
@@ -8,12 +8,14 @@
   border-color: #eeeeee;
 }
 
+
 .size-6 {
   color: #8e1616;
 }
 
 .card {
     transition: box-shadow 0.3s ease-in-out;
+    width: 15rem
 }
 
 .card:hover {
@@ -21,9 +23,6 @@
     cursor: pointer;
 }
 
-#modal {
-
-}
 .modal-dialog {
     z-index: 1000;
 }

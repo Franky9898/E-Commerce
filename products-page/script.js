@@ -15,13 +15,10 @@ function displayProducts(products) {
   const product = products
     .map((product) => {
       return `
-          <div class="card" style="width: 15rem" id="${product.id}">
-              <img
-                src="${product.image}"
-                class="card-img-top p-5"
-                alt="${product.title}"
-              />
-              <div class="card-body">
+          <div class="card" id="${product.id}">
+              <div class="d-flex justify-content-center mt-5"><img src="${product.image}" class="card-img-top" style="width: 6rem;" alt="${product.title}"></div>
+              <div class="card-body card-body d-flex flex-column justify-content-end">
+                <div>
                 <h6 class="card-title">
                 ${product.title}
                 </h6>
@@ -33,7 +30,7 @@ function displayProducts(products) {
                 >
                   Dettagli
                 </button>
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center mt-2">
                   <span class="card-text">${product.price}€</span>
                   <a href="#" class=""
                     ><svg
@@ -52,18 +49,15 @@ function displayProducts(products) {
                       />
                     </svg>
                   </a>
+                  </div>
                 </div>
               </div>
             </div>
             `;
     })
     .join("");
-  document.getElementById(
-    "container-cards"
-  ).innerHTML = `<div class="row gap-3">${product}</div>`;
+  document.getElementById("container-cards").innerHTML = product;
 }
-
-
 
 function categoryFilter(products) {
   const checkedCheckboxes = Array.from(
@@ -89,28 +83,25 @@ function priceFilter(products) {
   return products;
 }
 
-function starFilter(products)
-{
-  const checkedCheckboxes = Array.from(document.querySelectorAll('input[id="starCheckbox"]:checked'));
-  const selectedRating = checkedCheckboxes.map(checkbox => Number(checkbox.value));
-  if (selectedRating.length === 0)
-    return products;
+function starFilter(products) {
+  const checkedCheckboxes = Array.from(
+    document.querySelectorAll('input[id="starCheckbox"]:checked')
+  );
+  const selectedRating = checkedCheckboxes.map((checkbox) =>
+    Number(checkbox.value)
+  );
+  if (selectedRating.length === 0) return products;
 
-  return products.filter(product =>
-  {
+  return products.filter((product) => {
     let productRating = Math.floor(product.rating.rate);
-    for (let i = 0; i < selectedRating.length; i++)
-    {
-      if (selectedRating[i] <= productRating)
-        return true;
+    for (let i = 0; i < selectedRating.length; i++) {
+      if (selectedRating[i] <= productRating) return true;
     }
     return false;
   });
 }
 
-
-function filterProducts()
-{
+function filterProducts() {
   let filteredProducts = allProducts;
   filteredProducts = categoryFilter(filteredProducts);
   filteredProducts = priceFilter(filteredProducts);
