@@ -4,13 +4,56 @@ form.d-flex
     width: 70%;
 }
 
+#login-button
+{
+    color: #EEEEEE;
+}
+
+#cart-button
+{
+    color: #EEEEEE;
+}
+
+.fa-user,
+.fa-cart-shopping,
+.fa-bars
+{
+    color: #EEEEEE;
+    border-color: #EEEEEE;
+}
+
+/* Per metterla centrata */
+.fa-bars
+{
+    padding-top: 0.56em;
+    opacity: 0.8;
+}
+
+.fa-bars:hover
+{
+    padding-top: 0.56em;
+    opacity: 1;
+}
+
+/* Pulsante barra piccola */
+.navbar-toggler
+{
+    background: #8E1616 !important;
+    border-color: #8E1616 !important;
+}
+
+.navbar-toggler-icon
+{
+    background-image: none;
+}
+
 /*Personalizzazione barra di ricerca */
 .form-control
 {
     background-color: #EEEEEE !important;
-    color: #D84040 !important;
-    border: 1px solid #D84040 !important;
-    border-radius: 5px;
+    color: #8E1616 !important;
+    border: 1px solid #080606 !important;
+    border-radius: 4px;
     padding: 0.5em;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -18,7 +61,7 @@ form.d-flex
 /* Testo all'interno della barra */
 .form-control::placeholder
 {
-    color: #D84040 !important;
+    color: #8E1616 !important;
     opacity: 0.7;
 }
 
@@ -26,34 +69,39 @@ form.d-flex
 .form-control:focus
 {
     background-color: #EEEEEE !important;
-    color: #D84040 !important;
+    color: #8E1616 !important;
     border-color: #EEEEEE !important;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 /* Pulsante search */
 .btn-outline-success
 {
-    background-color: #D84040 !important;
+    background-color: #8E1616 !important;
     color: #EEEEEE !important;
     border: 1px solid #8E1616 !important;
     padding: 0.5em 1em;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-outline-success:hover
 {
     background-color: #8E1616 !important;
-    /* Darker red */
     color: #EEEEEE !important;
     border-color: #D84040 !important;
+}
+
+.btn-outline-success:active
+{
+    background-color: #D84040 !important;
 }
 
 /* Personalizzazione generale */
 .navbar
 {
-    background: #D84040;
+    background: #080606;
+    opacity: 0.9;
 }
 
 /* Personalizzazione menu dropdown */
@@ -62,18 +110,19 @@ form.d-flex
     border-radius: 0;
     border: none;
     padding: 0.5em;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-    background: #D84040;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.23);
+    background: #080606;
 }
 
-/* Personalizzazione delle scritte, principalmente nella seconda barra  */
+/* Personalizzazione delle scritte, principalmente nella seconda barra */
 .nav-item.dropdown .dropdown-toggle
 {
     font-size: 12px;
     padding: 0.5em 1em;
     border: 1px solid transparent;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: all 0.3s ease;
+    color: #EEEEEE;
 }
 
 .dropdown-menu ul
@@ -84,25 +133,12 @@ form.d-flex
 
 .dropdown-menu>ul
 {
-    background-color: #8E1616;
+    background-color: #080606;
     padding: 1em;
     margin: 0 0.5em;
-    border-radius: 5px;
+    border-radius: 4px;
     flex: 1;
-    /* Serve per avere il bordo dentro dropdown della stessa grandezza per ogni sottomenu*/
-}
-
-/* Effetto hover per il sottomenu */
-.dropdown-menu ul li a:hover
-{
-    background-color: #D84040;
-    color: #EEEEEE;
-}
-
-.dropdown-menu ul li a:active
-{
-    background-color: #080606;
-    color: #EEEEEE;
+    /* Serve per avere il bordo dentro dropdown della stessa grandezza per ogni sottomenu */
 }
 
 .dropdown-menu ul li a
@@ -114,8 +150,29 @@ form.d-flex
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Effetto hover per il sottomenu */
+.dropdown-menu ul li:not(:first-child) a:hover
+{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #EEEEEE;
+    border-radius: 4px;
+}
+
+
+
+.dropdown-menu ul li a:active
+{
+    background-color: #080606;
+    color: #EEEEEE;
+}
+
+
+
 @media screen and (min-width: 769px)
 {
+
+
 
     /* Creazione big menu */
     .nav-item .dropdown-menu
@@ -126,13 +183,14 @@ form.d-flex
         margin-top: 0;
         display: none;
         position: absolute;
-        background-color: #D84040;
+        background-color: #080606;
         color: #EEEEEE;
         z-index: 99;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border: none;
         transition: background-color 0.3s ease;
         padding: 1em;
+        opacity: 0.998;
     }
 
     /* Necessaria per il big menu lungo tutto lo schermo */
@@ -152,8 +210,8 @@ form.d-flex
     /* Serve per far comparire la box attorno alla scritta nel big menu */
     .nav-item.dropdown .dropdown-toggle:hover
     {
-        border-color: #8E1616;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-color: #080606;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         background-color: rgba(255, 255, 255, 0.1);
     }
 
@@ -162,7 +220,15 @@ form.d-flex
     {
         font-weight: bold;
         font-size: 1.2em;
-        color: #080606;
+        color: #EEEEEE;
+    }
+
+    /* Rimuove l'effetto hover sul capitolo */
+    .dropdown-menu ul li:first-child a:hover
+    {
+        background-color: rgba(255, 255, 255, 0);
+        color: #EEEEEE;
+        border-radius: 4px;
     }
 }
 
@@ -174,6 +240,15 @@ form.d-flex
     {
         max-height: 40vh;
         overflow-y: scroll;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .dropdown-menu.show::-webkit-scrollbar
+    {
+        display: none;
     }
 
     /* Personalizzazione del bottone principale*/
@@ -186,7 +261,7 @@ form.d-flex
         text-align: center;
         font-weight: bold;
         padding: 0.5em;
-        border-radius: 5px;
+        border-radius: 4px;
         transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
@@ -202,6 +277,13 @@ form.d-flex
         background-color: #080606 !important;
         color: #EEEEEE !important;
         border-color: #D84040 !important;
+    }
+
+    /* Sfondo del menu a tendina */
+    ul.dropdown-menu.show
+    {
+        background: #EEEEEE;
+        border-radius: 4px;
     }
 
     /* Permette ai bottoni all'interno del bottone di essere uno per riga */
@@ -221,7 +303,7 @@ form.d-flex
         text-align: center;
         font-weight: bold;
         padding: 0.5em;
-        border-radius: 5px;
+        border-radius: 4px;
         transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
@@ -242,11 +324,12 @@ form.d-flex
     /* Personalizzazione del sottomenu per renderlo diverso dagli altri */
     .dropdown-menu .dropdown-menu
     {
-        background-color: #8E1616 !important;
+        background-color: #080606 !important;
         border: none;
         color: #EEEEEE !important;
-        border-radius: 5px;
+        border-radius: 4px;
     }
+
 
     .dropdown-menu .dropdown-menu a
     {
@@ -255,7 +338,8 @@ form.d-flex
 
     .dropdown-menu .dropdown-menu a:hover
     {
-        background-color: #D84040 !important;
-        color: #EEEEEE !important;
+        border-color: #080606;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
     }
 }
