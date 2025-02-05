@@ -59,12 +59,32 @@ function priceFilter(products)
   return products;
 }
 
+function starFilter(products) 
+{
+  const checkedCheckboxes = Array.from(document.querySelectorAll('input[id="starCheckbox"]:checked'));
+  const selectedRating = checkedCheckboxes.map(checkbox => Number(checkbox.value));
+  if (selectedRating.length === 0)
+    return products;
+
+  return products.filter(product =>
+  {
+    let productRating = Math.floor(product.rating.rate);
+    for (let i = 0; i < selectedRating.length; i++)
+    {
+      if (selectedRating[i] <= productRating)
+        return true;
+    }
+    return false;
+  });
+}
+
 
 function filterProducts()
 {
   let filteredProducts = allProducts;
   filteredProducts = categoryFilter(filteredProducts);
   filteredProducts = priceFilter(filteredProducts);
+  filteredProducts = starFilter(filteredProducts);
   displayProducts(filteredProducts);
 }
 
