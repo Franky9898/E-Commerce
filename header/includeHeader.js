@@ -358,7 +358,7 @@ document.write(`
                 </div>
             </nav>
         </div>
-        <div id="divisoreHeader" style="height: 50px;">
+        <div id="divisoreHeader" style="height: 150px;">
 
         </div>
             `);
@@ -378,11 +378,11 @@ document.addEventListener("DOMContentLoaded", function ()
                 {
                     if (openDropdown === menuItem)
                     {
-                        divSep.style.height = "50px"; // Il div si riduce
+                        divSep.style.height = "150px"; // Il div si riduce
                         openDropdown = null;
                     } else
                     {
-                        divSep.style.height = "250px"; // Il div si allarga
+                        divSep.style.height = "370px"; // Il div si allarga
                         openDropdown = menuItem;
                     }
                 }
