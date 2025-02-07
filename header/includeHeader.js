@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function ()
     {
         if (window.innerWidth < 768)
         {
-            divSep.style.height = "50px";
+            divSep.style.height = "100px";
             openDropdown = null;
         }
     });
