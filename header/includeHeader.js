@@ -12,22 +12,27 @@ document.write(`
                 </button>
                 <!-- Barra di ricerca-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex justify-content-center w-100" role="search">
+                    <form class="d-flex justify-content-end w-100" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
-                    <div class="d-flex align-items-start me-auto flex-column flex-md-row">
-                        <div class="d-flex align-items-center mt-2 ms-4 mb-2 mb-md-0 mt-md-0">
-                            <i class="fa-solid fa-user fa-lg"></i>
-                            <p class="mb-0 ms-2" id="login-button">Login</p>
+                    <div class="d-flex align-items-start align-items-md-center me-auto flex-column flex-md-row">
+                        <div class="d-flex align-items-center mt-2 ms-2 mb-2 mb-md-0 mt-md-0 ms-md-4">
+                            <button id="user-button" type="button" class="btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-user fa-lg pe-2"></i>
+                               Login
+                            </button>
                         </div>
-                        <div class="d-flex align-items-center ms-4 mb-2">
-                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
-                            <p class="mb-0 ms-2" id="cart-button">Carrello</p>
+                        <div class="d-flex align-items-center ms-2 mb-2 mb-md-0 mt-md-0">
+                            <button id="cart-button" class="btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-cart-shopping fa-lg pe-2"></i>
+                                Carrello
+                            </button>
+                            
                         </div>
                         <!-- Dropdown Menu per i bottoni su schermi piccoli -->
-                        <ul class="navbar-nav ms-4 mb-2 mb-md-0 d-md-none">
+                        <ul class="navbar-nav ms-2 mb-2 mb-md-0 d-md-none">
                             <li class="nav-item dropdown">
                                 <button class="dropdown-toggle btn btn-primary text-center"
                                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
