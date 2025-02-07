@@ -54,9 +54,9 @@ document.write(`
                                             Gioielli
                                         </button>
                                         <ul class="header dropdown-menu">
-                                            <li><a class="header dropdown-item" href="#">Bracciali</a></li>
-                                            <li><a class="header dropdown-item" href="#">Anelli</a></li>
-                                            <li><a class="header dropdown-item" href="#">Orecchini</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=jewelery">Bracciali</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=jewelery">Anelli</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=jewelery">Orecchini</a></li>
                                         </ul>
                                         <button class="header dropdown-toggle btn btn-primary  text-center"
                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
@@ -65,9 +65,20 @@ document.write(`
                                             Elettronica
                                         </button>
                                         <ul class="header dropdown-menu">
-                                            <li><a class="header dropdown-item" href="#">Hard disk</a></li>
-                                            <li><a class="header dropdown-item" href="#">Monitor</a></li>
-                                            <li><a class="header dropdown-item" href="#">Computer</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=electronics">Hard disk</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=electronics">Monitor</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=electronics">Computer</a></li>
+                                        </ul>
+                                        <button class="header dropdown-toggle btn btn-primary  text-center"
+                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                            type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            Vestiti Uomo
+                                        </button>
+                                        <ul class="header dropdown-menu">
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=men's clothing">Magliette</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=men's clothing">Giacche</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=men's clothing">Mutande</a></li>
                                         </ul>
                                         <button class="header dropdown-toggle btn btn-primary  text-center"
                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
@@ -76,20 +87,9 @@ document.write(`
                                             Vestiti Donna
                                         </button>
                                         <ul class="header dropdown-menu">
-                                            <li><a class="header dropdown-item" href="#">Magliette</a></li>
-                                            <li><a class="header dropdown-item" href="#">Giacche</a></li>
-                                            <li><a class="header dropdown-item" href="#">Sciarpe</a></li>
-                                        </ul>
-                                        <button class="header dropdown-toggle btn btn-primary  text-center"
-                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                                            type="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                            Vestiti uomo
-                                        </button>
-                                        <ul class="header dropdown-menu">
-                                            <li><a class="header dropdown-item" href="#">Magliette</a></li>
-                                            <li><a class="header dropdown-item" href="#">Giacche</a></li>
-                                            <li><a class="header dropdown-item" href="#">Mutande</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=women's clothing">Magliette</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=women's clothing">Giacche</a></li>
+                                            <li><a class="header dropdown-item" href="../products-page/index.html?filter=women's clothing">Sciarpe</a></li>
                                         </ul>
                                         <button class="header dropdown-toggle btn btn-primary  text-center"
                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
@@ -361,8 +361,9 @@ document.write(`
         <div id="divisoreHeader" style="height: 150px;">
 
         </div>
-            `);
+`);
 
+//Funzione per non far sovrapporre il big-menu con il contenuto delle pagine
 document.addEventListener("DOMContentLoaded", function ()
 {
     const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
@@ -397,4 +398,31 @@ document.addEventListener("DOMContentLoaded", function ()
             openDropdown = null;
         }
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", function ()
+{
+    // Funzione per ottenere i parametri query dall'URL
+    function getQueryParam(param)
+    {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const category = getQueryParam('filter'); 
+    console.log("Filter query parameter:", category);
+    if (category)
+    {
+        const checkbox = document.querySelector(`input[name="filter"][value="${category}"]`);
+        if (checkbox)
+        {
+            checkbox.checked = true;
+            checkbox.dispatchEvent(new Event('change', { bubbles: true })); // Triggera manualmente l'evento onchange
+        }
+        fetchProductsByCategories(category);
+    } else
+    {
+        fetchAllProducts();
+    }
 });

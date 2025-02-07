@@ -1,9 +1,11 @@
 allProducts = [];
 
-function fetchAllProducts() {
+function fetchAllProducts()
+{
   fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
-    .then((products) => {
+    .then((products) =>
+    {
       console.log(products);
       allProducts = products;
       displayProducts(products);
@@ -11,9 +13,22 @@ function fetchAllProducts() {
     .catch((error) => console.error("Errore nel recupero dei prodotti", error));
 }
 
-function displayProducts(products) {
+function fetchProductsByCategories(category)
+{
+  fetch('https://fakestoreapi.com/products/category/' + category)
+    .then(response => response.json())
+    .then(products =>
+    {
+      console.log("category:", products);
+      displayProducts(products);
+    })
+}
+
+function displayProducts(products)
+{
   const product = products
-    .map((product) => {
+    .map((product) =>
+    {
       return `
           <div class="card" id="${product.id}">
               <div class="d-flex justify-content-center mt-5"><img src="${product.image}" class="card-img-top" style="width: 6rem;" alt="${product.title}"></div>
@@ -45,9 +60,10 @@ function displayProducts(products) {
   document.getElementById("container-cards").innerHTML = product;
 }
 
-function categoryFilter(products) {
+function categoryFilter(products)
+{
   const checkedCheckboxes = Array.from(
-    document.querySelectorAll('input[id="flexCheckChecked"]:checked')
+    document.querySelectorAll('input[name="filter"]:checked')
   ); // Mette in un array le checkbox selezionate
   const selectedCategories = checkedCheckboxes.map(
     (checkbox) => checkbox.value
@@ -59,7 +75,8 @@ function categoryFilter(products) {
   ); // Ritorna i prodotti che appartengono a una categoria selezionata
 }
 
-function priceFilter(products) {
+function priceFilter(products)
+{
   if (document.getElementById("prezzoCrescente").checked)
     return products.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
 
@@ -69,25 +86,29 @@ function priceFilter(products) {
   return products;
 }
 
-function starFilter(products) {
+function starFilter(products)
+{
   const checkedCheckboxes = Array.from(
-    document.querySelectorAll('input[id="starCheckbox"]:checked')
+    document.querySelectorAll('input[name="starCheckbox"]:checked')
   );
   const selectedRating = checkedCheckboxes.map((checkbox) =>
     Number(checkbox.value)
   );
   if (selectedRating.length === 0) return products;
 
-  return products.filter((product) => {
+  return products.filter((product) =>
+  {
     let productRating = Math.floor(product.rating.rate);
-    for (let i = 0; i < selectedRating.length; i++) {
+    for (let i = 0; i < selectedRating.length; i++)
+    {
       if (selectedRating[i] <= productRating) return true;
     }
     return false;
   });
 }
 
-function filterProducts() {
+function filterProducts()
+{
   let filteredProducts = allProducts;
   filteredProducts = categoryFilter(filteredProducts);
   filteredProducts = priceFilter(filteredProducts);
@@ -100,10 +121,12 @@ document.addEventListener("DOMContentLoaded", () =>
   fetchAllProducts();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function ()
+{
   const modal = document.getElementById("modal");
 
-  modal.addEventListener("show.bs.modal", function (event) {
+  modal.addEventListener("show.bs.modal", function (event)
+  {
     const button = event.relatedTarget;
     const description = button.getAttribute("data-description");
 
