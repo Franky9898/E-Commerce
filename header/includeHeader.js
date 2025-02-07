@@ -1,6 +1,6 @@
 document.write(`
-     <div class="header">
-            <nav class="header navbar navbar-expand-md">
+     <div class="header" id="divHeader">
+            <nav class="header header navbar navbar-expand-md">
                 <div class="header container">
                     <!-- Logo -->
                     <a class="header navbar-brand" href="#"><img src="https://placehold.co/100x50" alt="logo"></a>
@@ -334,9 +334,9 @@ document.write(`
                                 Dropdown
                             </a>
                             <div class="header dropdown-menu">
-                                <ul class="header  header big-menu">
-                                    <li><a class="header header dropdown-item" href="#">Action</a></li>
-                                    <li><a class="header header dropdown-item" href="#">Action</a></li>
+                                <ul class="header big-menu">
+                                    <li><a class="header dropdown-item" href="#">Action</a></li>
+                                    <li><a class="header dropdown-item" href="#">Action</a></li>
                                     <li><a class="header dropdown-item" href="#">Action</a></li>
                                     <li><a class="header dropdown-item" href="#">Action</a></li>
                                 </ul>
@@ -358,41 +358,43 @@ document.write(`
                 </div>
             </nav>
         </div>
-        <div id="divisoreHeader" style="height: 50px;"></div>
+        <div id="divisoreHeader" style="height: 150px;">
+
+        </div>
             `);
 
-            document.addEventListener("DOMContentLoaded", function ()
+document.addEventListener("DOMContentLoaded", function ()
 {
-  const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
-  const divSep = document.getElementById("divisoreHeader"); 
-  let openDropdown = null; // Tiene traccia di quale menù è aperto (una boolean non funziona per qualche motivo)
-  if (menuItems.length > 0)
-  {
-    menuItems.forEach(menuItem =>
+    const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
+    const divSep = document.getElementById("divisoreHeader");
+    let openDropdown = null; // Tiene traccia di quale menù è aperto (una boolean non funziona per qualche motivo)
+    if (menuItems.length > 0)
     {
-      menuItem.addEventListener("click", function ()
-      {
-        if (window.innerWidth >= 768)
+        menuItems.forEach(menuItem =>
         {
-          if (openDropdown === menuItem)
-          {
-            divSep.style.height = "100px"; // Il div si riduce
-            openDropdown = null;
-          } else
-          {
-            divSep.style.height = "250px"; // Il div si allarga
-            openDropdown = menuItem;
-          }
-        }
-      });
-    });
-  }
-  window.addEventListener("resize", function () // Quando la finestra si riduce, il div si riduce a prescindere
-  {
-    if (window.innerWidth < 768)
-    {
-      divSep.style.height = "50px";
-      openDropdown = null;
+            menuItem.addEventListener("click", function ()
+            {
+                if (window.innerWidth >= 768)
+                {
+                    if (openDropdown === menuItem)
+                    {
+                        divSep.style.height = "150px"; // Il div si riduce
+                        openDropdown = null;
+                    } else
+                    {
+                        divSep.style.height = "370px"; // Il div si allarga
+                        openDropdown = menuItem;
+                    }
+                }
+            });
+        });
     }
-  });
+    window.addEventListener("resize", function () // Quando la finestra si riduce, il div si riduce a prescindere
+    {
+        if (window.innerWidth < 768)
+        {
+            divSep.style.height = "100px";
+            openDropdown = null;
+        }
+    });
 });
