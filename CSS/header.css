@@ -157,6 +157,7 @@
     /* Largezza barra di ricerca */
     .form-control
     {
+        min-width: 250px;
         width: 30%;
     }
 
