@@ -1,24 +1,373 @@
-.carousel-item {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;  /* Evita che le cards vadano a capo */
+body{
+  background-color: #EEEEEE;
+}
+/*primo carosello*/
+/**{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}*/
+.primo .carousel-indicators {
+    background-color: rgba (0, 0, 0, 0.473);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.primo .carousel-indicators [data-bs-target] {
+  width: 50px;
+  height: 50px;
+  background-color:transparent;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+.primo .carousel-control-prev i,
+.primo .carousel-control-next i {
+  background-color: red; /* Cambia "red" con il colore desiderato */
+  padding: 10px; /* Aggiunge spazio attorno all'icona */
+  border-radius: 50%; /* Rende lo sfondo arrotondato */
+}
+
+.primo .carousel-btn {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.primo .carousel-btn button img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.primo .carousel-indicators button.active {
+    border: 2px solid #8E1616 ;
+    border-radius: 10px;
+    transform: translateY(2px);
+}
+
+/* Main Gallery Image */
+.primo .carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  
+}
+
+@media screen and (max-width:1050px) {
+.primo .carousel-item img {
+width: 100%;
+object-fit: contain;
+}
+}
+
+@media screen and (max-width:500px) {
+.primo .carousel-item img {
+width: 100%;
+object-fit: contain;
+}
+}
+  
+  /*secondo carosello*/
+  /**,*::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }*/
+  
+  .secondo body {
+  background-color: rgb(255, 255, 255);
+  }
+  
+  .secondo main {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+  
+  #carouselExampleCaptions2 {
+  width: 80vw;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .secondo .carousel-inner {
+    width: 100%;
+  }
+  
+  .secondo .new {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline;
+  }
+  
+  /* Controls */
+  .secondo i.fa-arrow-right,
+  .secondo i.fa-arrow-left {
+  background: none;
+  border: 2px solid #8E1616 ;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 100%;
+  transition: background .6s ease;
+  }
+  
+  .secondo .control-btn  {
+    position: absolute;
+    top: -1em;
+    right: 5em;
+    
+  }
+  
+  .secondo .carousel-item .card {
+    margin-top: 20px;
+    height: 20em;
+    height: fit-content;
+  }
+  
+  .secondo .control-btn i.fa-arrow-left {
+    position: absolute;
+    right: 6em;
+  } 
+  
+  .secondo i.fa-arrow-right:hover,
+  .secondo i.fa-arrow-left:hover {
+  background: #8E1616 ;
+  color: rgb(0, 0, 0);
+  }
+  
+  .secondo .carousel-control-next {
+    margin: 0 3em;
+  }
+  
+  /* Indicators */
+  
+  .secondo .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 2px solid #8E1616 ;
+  
+  }
+  
+  .secondo .carousel-indicators .active {
+    opacity: 1;
+    background-color:  #8E1616 ;
+    
+  }
+  
+  @media screen and (max-width: 900px){
+  #carouselExampleCaptions2 {
+  width: 70vw;
+  height: 70vw;
+  }
+  
+  .secondo .card img {
+    width: 100%;
+  }
+  
+  .secondo .card .name {
+  margin-top: 1em;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .secondo .card .role {
+    font-size: 0.8em;
+  }
+  
+  .secondo .card .work-at {
+    font-size: 0.6em;
+  }
+  }
+  
+  @media screen and (max-width: 576px) {
+  #carouselExampleCaptions2 {
+  width: 70vw;
+  height: 70vh;
+  }
+  
+  .secondo .carousel-item .card .card-body {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  }
+  
   }
   
 
-  .carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: red;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-  }
-  .carousel-item .card {
-    margin: 0 10px;  /* Distanza tra le cards */
-    flex: 0 0 auto;  /* Impedisce alle cards di essere ridimensionate */
-  }
+/*terzo carosello*/
+*,*::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.terzo body {
+background-color: rgb(241 245 249);
+}
+
+.terzo main {
+flex-direction: row;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+#carouselExampleCaptions3 {
+width: 80vw;
+height: 100%;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.terzo .carousel-inner {
+  width: 100%;
+}
+
+.terzo .new {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline;
+}
+
+/* Controls */
+.terzo i.fa-arrow-right,
+.terzo i.fa-arrow-left {
+background: none;
+border: 2px solid #8E1616 ;
+color: black;
+padding: 10px;
+border-radius: 100%;
+transition: background .6s ease;
+}
+
+.terzo .control-btn  {
+  position: absolute;
+  top: -1em;
+  right: 5em;
+}
+
+.terzo .carousel-item .card {
+  height: 20em;
+  height: fit-content;
+}
+
+.terzo .control-btn i.fa-arrow-left {
+  position: absolute;
+  right: 6em;
+} 
+
+.terzo i.fa-arrow-right:hover,
+.terzo i.fa-arrow-left:hover {
+background: #8E1616 ;
+color: black;
+}
+
+.terzo .carousel-control-next {
+  margin: 0 3em;
+}
+
+/* Indicators */
+
+.terzo .carousel-indicators [data-bs-target] {
+
+width: 10px;
+height: 10px;
+border-radius: 100%;
+border: 2px solid #8E1616 ;
+}
+
+.terzo .carousel-indicators .active {
+  opacity: 1;
+  background-color:  #8E1616 ;
+}
+
+@media screen and (max-width: 900px){
+#carouselExampleCaptions3 {
+width: 70vw;
+height: 70vw;
+}
+
+.terzo .card img {
+  width: 100%;
+}
+
+.terzo .card .name {
+margin-top: 1em;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.terzo .card .role {
+  font-size: 0.8em;
+}
+
+.terzo .card .work-at {
+  font-size: 0.6em;
+}
+}
+
+@media screen and (max-width: 576px) {
+#carouselExampleCaptions3 {
+width: 70vw;
+height: 70vh;
+}
+
+.terzo .carousel-item .card .card-body {
+position: absolute;
+bottom: 20px;
+left: 10px;
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 10px;
+}
+
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.negozio-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Distanza tra immagine e testo */
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.negozio-img {
+  width: 300px; /* Regola la dimensione dell'immagine */
+  height: auto;
+  border-radius: 10px; /* Opzionale: angoli arrotondati */
+  
+}
+
+.negozio-text {
+  flex: 1; /* Permette al testo di occupare tutto lo spazio disponibile */
+  font-size: 16px;
+  line-height: 1.6;
+}
+ 
+  
+ 
