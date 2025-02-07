@@ -13,22 +13,25 @@
   color: #eeeeee;
 }
 
-
 .size-6 {
   color: #8e1616;
 }
 
 .card {
-    transition: box-shadow 0.3s ease-in-out;
-    width: 15rem
+  transition: box-shadow 0.3s ease-in-out;
+  width: 15rem;
 }
 
 .card:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.fa-cart-shopping {
+  color: #8e1616;
+  border-color: #8e1616;
 }
 
 .modal-dialog {
-    z-index: 1000;
+  z-index: 1000;
 }
-
