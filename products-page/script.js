@@ -23,7 +23,7 @@ function displayProducts(products) {
                 ${product.title}
                 </h6>
                 <button
-                  class="btn btn-primary open-modal"
+                  class="btn open-modal"
                   data-bs-toggle="modal"
                   data-bs-target="#modal"
                   data-description="${product.description}"

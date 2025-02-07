@@ -1,11 +1,16 @@
-.btn-primary {
+.form-check-inline {
+  margin-right: 0;
+}
+
+.btn {
   background-color: #8e1616;
   border: inherit;
   color: #ced4da;
 }
-.btn-primary:hover {
-  background-color: #8e1616; /* Colore di sfondo al passaggio del mouse */
-  border-color: #eeeeee;
+
+.btn:hover {
+  background-color: #8e1616;
+  color: #eeeeee;
 }
 
 
@@ -26,3 +31,4 @@
 .modal-dialog {
     z-index: 1000;
 }
+
