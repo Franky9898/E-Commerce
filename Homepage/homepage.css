@@ -177,20 +177,16 @@ object-fit: contain;
   .secondo .card img {
     width: 100%;
   }
+ 
   
-  .secondo .card .name {
-  margin-top: 1em;
-    font-size: 1em;
-    font-weight: 700;
-  }
+  .secondo .card .caption .name{
+    text-align: center; /* Centra il testo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
   
-  .secondo .card .role {
-    font-size: 0.8em;
-  }
-  
-  .secondo .card .work-at {
-    font-size: 0.6em;
-  }
   }
   
   @media screen and (max-width: 576px) {
