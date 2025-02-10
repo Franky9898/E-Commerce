@@ -1,7 +1,7 @@
 document.write(`
     <footer class="py-5">
       <div class="row">
-        <div class="col-3 offset-1 mb-3">
+        <div class="col-3 mb-3">
           <form>
             <h1>Store</h1>
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -15,7 +15,7 @@ document.write(`
             </div>
           </form>
         </div>
-        <div class="col-3 offset-1 mb-3">
+        <div class="col-3 mb-3">
           <form>
             <h1>Newsletter</h1>
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -32,16 +32,16 @@ document.write(`
             </div>
           </form>
         </div>
-        <div class="col-3 offset-1 mb-3">
+        <div class="col-3 mb-3">
           <form>
             <h1>Social</h1>
             <div class="social-icons">
-              <img src="/E-comm/E-Commerce/footer/img/x.png" alt="x" width="35px" height="35px" /><img
-                src="/E-comm/E-Commerce/footer/img/fb.webp"
+              <img src="../footer/img/x.png" alt="x" width="30rem" height="30rem" /><img
+                src="../footer/img/fb.webp"
                 alt="fb"
-                width="35px"
-                height="35px"
-              /><img src="/E-comm/E-Commerce/footer/img/yt.webp" alt="yt" width="35px" height="35px" />
+                width="30rem"
+                height="30rem"
+              /><img src="../footer/img/yt.webp" alt="yt" width="30rem" height="30rem" />
             </div>
           </form>
         </div>
