@@ -23,7 +23,7 @@ function fetchAndInsertProducts(containerId) {
                                 </button>
                                 <div class="d-flex justify-content-between align-items-center mt-2">
                                     <span class="card-text">${product.price}€</span>
-                                    <a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+                                    <a href="#"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #8E1616"></i></a>
                                 </div>
                             </div>
                         </div>`;
