@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #EEEE;
+    background-color:  #EEEEEE;
     padding: 20px;
 }
 
@@ -16,7 +16,8 @@ body {
     gap: 20px;
     background: #eeeeee;
     padding: 20px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -31,7 +32,8 @@ body {
     gap: 20px;
     background: #8E1616; 
     padding: 20px;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -95,7 +97,7 @@ body {
     left: -300px;  /* Inizialmente nascosto a sinistra */
     width: 300px;
     height: 100%;
-    background-color: #8E1616;
+    background-color:  #EEEEEE;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     transition: left 0.3s ease; /* Animazione di apertura */
@@ -103,12 +105,12 @@ body {
 
 /* Imposta il colore del testo dei paragrafi a bianco */
 .side-panel p {
-    color: white;
+    color: black;
 }
 
 /* Imposta il colore del testo dei paragrafi a bianco */
 .side-panel h2 {
-    color: white;
+    color: black;
 }
 /*cambio colore dell prezzo principale */
 .price {
@@ -126,23 +128,19 @@ body {
     background: none;
 }
 /* nackground prodotti correlati */
+/* Stili per il carosello che mostra 3 immagini insieme */
 .carousel-inner {
     display: flex;
-    align-items: center;
     gap: 20px;
-    background: #D84040; 
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/*background di tutto il container*/
-.container {
-    gap: 20px;
-    background: #EEEEEE;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* Aggiungi una classe per ogni "carousel-item" in modo che ogni prodotto occupi il 33% della larghezza */
+.carousel-item {
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
 }
+
 
 
 
