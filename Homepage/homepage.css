@@ -24,9 +24,9 @@ body{
 }
 .primo .carousel-control-prev i,
 .primo .carousel-control-next i {
-  background-color: red; /* Cambia "red" con il colore desiderato */
-  padding: 10px; /* Aggiunge spazio attorno all'icona */
-  border-radius: 50%; /* Rende lo sfondo arrotondato */
+  background-color: red; 
+  padding: 10px; 
+  border-radius: 50%; 
 }
 
 .primo .carousel-btn {
@@ -51,7 +51,7 @@ body{
     transform: translateY(2px);
 }
 
-/* Main Gallery Image */
+
 .primo .carousel-item img {
   width: 100%;
   height: 500px;
@@ -63,7 +63,7 @@ body{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
+  color:#8E1616;
   padding: 15px 20px;
   border-radius: 10px;
   max-width: 30%;
@@ -73,12 +73,14 @@ body{
 .carousel-text.left {
   left: 5%;
   text-align: left;
-  color: #EEEEEE;
+  color: #8E1616;
+  ;
 }
 
 .carousel-text.right {
   right: 5%;
   text-align: right;
+  
 }
 
 .cta-link {
@@ -86,7 +88,7 @@ body{
   height: 60px;
   font-size: 50px;
   line-height: 60px;
-  color: #EEEEEE;
+  color: #8E1616;
 }
 
 @media screen and (max-width:1050px) {
@@ -394,20 +396,19 @@ h2 {
 .negozio-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* Distanza tra immagine e testo */
+  gap: 20px; 
   margin-top: 20px;
   margin-bottom: 35px;
 }
 
 .negozio-img {
-  width: 300px; /* Regola la dimensione dell'immagine */
+  width: 300px; 
   height: auto;
-  border-radius: 10px; /* Opzionale: angoli arrotondati */
-
+  border-radius: 10px; 
 }
 
 .negozio-text {
-  flex: 1; /* Permette al testo di occupare tutto lo spazio disponibile */
+  flex: 1; 
   font-size: 16px;
   line-height: 1.6;
 }
