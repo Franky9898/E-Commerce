@@ -6,9 +6,9 @@ function displayCartProducts(products)
       return `
           <div class="card my-3">
               <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="${product.image}" class="img-fluid rounded-start m-2" alt="${product.title}"
-                    style="width: 16rem; height: 9rem;">
+                <div class="col-md-4 align-content-center">
+                  <img src="${product.image}" class="img-fluid rounded my-2 mx-auto d-block" alt="${product.title}"
+                    style="width: 70%; height: auto; max-height: 450px;">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body parolaCasuale">
@@ -17,16 +17,21 @@ function displayCartProducts(products)
                     ${product.description}
                     </p>
                     <p class="card-text">
-                      Prezzo: ${product.price}$
+                      Prezzo: ${product.price}€
                     </p>
                     <p class="card-text">
-                    <small class="text-body-secondary">Opzioni regalo</small>
+                    <small class="text-body-secondary" style= "text-decoration: underline";>Opzioni regalo</small>
                     </p>
 
-                    <div class="d-flex align-items-center">
-                      <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${product.id}', -1)">-</button>
-                      <span class="mx-2">${product.quantity}</span>
-                      <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${product.id}', 1)">+</button>
+                    <div class="d-flex align-items-center my-2 justify-content-between">
+                      <span> Quantità: </span>
+                      <span>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${product.id}', -1)">-</button>
+                          <span class="mx-2">${product.quantity}</span>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${product.id}', 1)">+</button>
+                      </span>
+                      
+                      
                     </div>
 
                     <button class="btn btn btn-primary" onclick="removeFromCart(${product.id})">Rimuovi dal carrello</button>
@@ -39,9 +44,9 @@ function displayCartProducts(products)
     .join("");
   document.getElementById("leftContainer").innerHTML = product;
   const subtotal = subtotalCart(products);
-  document.getElementById("subtotale").innerHTML = subtotal + "$";
+  document.getElementById("subtotale").innerHTML = subtotal + "€";
   document.getElementById("costiSpedizione").innerHTML = shippingCost(subtotal);
-  document.getElementById("totale").innerHTML = total(subtotal) + "$";
+  document.getElementById("totale").innerHTML = total(subtotal) + "€";
 }
 
 /*
@@ -99,9 +104,9 @@ function subtotalCart(products)
 function shippingCost(subtotal) 
 {
   if (subtotal <= 0)
-    return "0$"
+    return "0€"
   else if (subtotal <= 50)
-    return "15$";
+    return "15€";
   else
     return "Gratis";
 }
