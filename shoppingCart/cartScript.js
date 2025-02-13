@@ -93,15 +93,14 @@ function subtotalCart(products)
   {
     subtotal += product.price * product.quantity;
   });
-
   return subtotal;
 }
 
 function shippingCost(subtotal) 
 {
-  if (subtotal === 0)
+  if (subtotal <= 0)
     return "0$"
-  else if (subtotal < 50)
+  else if (subtotal <= 50)
     return "15$";
   else
     return "Gratis";
