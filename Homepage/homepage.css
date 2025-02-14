@@ -168,6 +168,13 @@ object-fit: contain;
     height: 20em;
     height: fit-content;
   }
+  .secondo .card img {
+    width: auto !important; /* Permette all'immagine di mantenere le proporzioni */
+    height: 200px !important; /* Imposta una dimensione uniforme */
+    object-fit: contain !important; /* Evita tagli nell'immagine */
+    display: block !important;
+    margin: auto; /* Centra orizzontalmente */
+  }
 
   .secondo .control-btn i.fa-arrow-left {
     position: absolute;
@@ -207,7 +214,10 @@ object-fit: contain;
   }
 
   .secondo .card img {
-    width: 100%;
+    width: 50%;
+    height: 200px ;
+    object-fit: cover ;
+}
   }
 
 
@@ -226,7 +236,7 @@ object-fit: contain;
     font-size: 0.6em;
   }
   
-  }
+  
   .caption {
     padding-left: 20px;
   }
