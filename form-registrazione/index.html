@@ -160,11 +160,53 @@
                   <hr class="mt-5 mb-4 border-secondary-subtle" />
                   <p class="m-0 text-secondary text-end">
                     Already have an account?
-                    <a href="#!" class="link text-decoration-none custom"
+                    <a href="#!" class="link text-decoration-none custom" id="showLogin"
                       >Sign in</a
                     >
                   </p>
                 </div>
+              </div>
+              <div id="loginForm" style="display: none;">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-5">
+                      <h2 class="h3">Sign in</h2>
+                      <h3 class="fs-6 fw-normal text-secondary m-0">
+                        Enter your details to sign in
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <form action="#!">
+                  <div class="row gy-3 gy-md-4 overflow-hidden">
+                    <div class="col-12">
+                      <label for="email" class="form-label"
+                        >Email <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        placeholder="name@example.com"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="password" class="form-label"
+                        >Password <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        id="password"
+                        value=""
+                        required
+                      />
+                    </div>
+                  </div>
+                </form>
               </div>
               <div class="row">
                 <div class="col-12">
@@ -228,5 +270,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
