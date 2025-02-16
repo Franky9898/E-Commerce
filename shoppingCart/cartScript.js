@@ -76,7 +76,7 @@ function addToCart(event, productId)
 {
   event.preventDefault();
   const selectedProduct = allProducts.find(product => product.id == productId); // Prende le informazioni del prodotto.  == e non === perché a quanto pare l'id dell'API non è in number ma in string
-  if (!selectedProduct) 
+  if (!selectedProduct)
     return;
   let productInCart = productCart.find(product => product.id == productId); // Controlla se è nel carrello
   if (productInCart)
@@ -145,3 +145,5 @@ document.addEventListener("DOMContentLoaded", () =>
   productCart = JSON.parse(localStorage.getItem("cart")) || [];
   displayCartProducts(productCart);
 });
+
+document.getElementById("checkoutBtn").addEventListener("click", function (e) { e.preventDefault(); });
