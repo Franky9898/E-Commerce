@@ -127,12 +127,11 @@ body {
     border: none;
     background: none;
 }
-/* nackground prodotti correlati */
 /* Stili per il carosello che mostra 3 immagini insieme */
-.carousel-inner {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+.carousel-inner img {
+    width: 100%;  /* Occupa tutta la larghezza disponibile */
+    height: 400px; /* Imposta un'altezza fissa */
+    border-radius: 10px; /* Per un aspetto più elegante */
 }
 
 /* Aggiungi una classe per ogni "carousel-item" in modo che ogni prodotto occupi il 33% della larghezza */

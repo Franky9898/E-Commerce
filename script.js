@@ -1,51 +1,39 @@
-// Quando la pagina è caricata, recupera i prodotti
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://fakestoreapi.com/products") // Ottiene tutti i prodotti
-        .then(response => response.json()) // Converte la risposta in JSON
+    fetch("https://fakestoreapi.com/products")
+        .then(response => response.json())
         .then(data => {
             aggiornaPagina(data[0]); // Mostra il primo prodotto nella scheda principale
-            popolaCarosello(data); // Popola il carosello con più prodotti
+            popolaCarosello(data); // Popola il carosello con prodotti cliccabili
         })
         .catch(error => console.error("Errore nel caricamento:", error));
 });
 
-// Funzione per aggiornare la scheda principale del prodotto
+// Funzione per aggiornare la scheda principale con il prodotto selezionato
 function aggiornaPagina(product) {
-    document.querySelector(".product-info h1").textContent = product.title;
-    document.querySelector(".price").textContent = `€ ${product.price}`;
-    document.querySelector(".description").textContent = product.description;
+    document.getElementById("productTitle").textContent = product.title;
+    document.getElementById("productPrice").textContent = `€ ${product.price}`;
     document.getElementById("mainImage").src = product.image;
 
-    // Aggiorna anche il pannello laterale con i dettagli del prodotto
-    aggiornaDettagliPannello(product);
+    // Aggiorna il pannello laterale
+    document.getElementById("detailTitle").textContent = product.title;
+    document.getElementById("detailPrice").textContent = `€ ${product.price}`;
+    document.getElementById("detailDescription").textContent = product.description;
+
+    // Aggiorna le miniature
+    aggiornaMiniature(product);
 }
 
-// Funzione per popolare il carosello con 3 immagini per volta
-function popolaCarosello(products) {
-    const carouselInner = document.querySelector(".carousel-inner");
-    carouselInner.innerHTML = ""; // Svuota il carosello
+// Funzione per popolare le miniature con immagini del prodotto selezionato
+function aggiornaMiniature(product) {
+    const thumbnailsContainer = document.getElementById("thumbnails");
+    thumbnailsContainer.innerHTML = ""; // Svuota le miniature
 
-    let index = 0; // Indice per scorrere i prodotti
-    while (index < products.length) {
-        // Crea un nuovo carosello-item
-        const item = document.createElement("div");
-        item.classList.add("carousel-item");
-        if (index === 0) item.classList.add("active"); // Imposta il primo elemento come attivo
-
-        // Crea una riga di 3 immagini
-        let imagesHTML = '';
-        for (let j = 0; j < 3 && index < products.length; j++, index++) {
-            const product = products[index];
-            imagesHTML += `
-                <div class="col">
-                    <img src="${product.image}" class="d-block w-100" alt="${product.title}" onclick="aggiornaPagina(${JSON.stringify(product)})">
-                </div>
-            `;
-        }
-
-        // Aggiungi le immagini al carosello-item
-        item.innerHTML = `<div class="row">${imagesHTML}</div>`;
-        carouselInner.appendChild(item);
+    for (let i = 0; i < 4; i++) {
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.classList.add("thumbnail");
+        img.onclick = () => cambiaImmagine(product.image);
+        thumbnailsContainer.appendChild(img);
     }
 }
 
@@ -54,9 +42,46 @@ function cambiaImmagine(nuovaImmagine) {
     document.getElementById('mainImage').src = nuovaImmagine;
 }
 
-// Funzione per aggiungere il prodotto al carrello
-function aggiungiAlCarrello() {
-    alert('Prodotto aggiunto al carrello!');
+// Funzione per popolare il carosello con prodotti cliccabili
+function popolaCarosello(products) {
+    const carouselInner = document.querySelector(".carousel-inner");
+    carouselInner.innerHTML = ""; // Pulisce il carosello
+
+    let index = 0;
+    while (index < products.length) {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+        if (index === 0) item.classList.add("active");
+
+        // Creiamo una riga con massimo 3 prodotti per volta
+        const rowDiv = document.createElement("div");
+        rowDiv.classList.add("row");
+
+        for (let j = 0; j < 3 && index < products.length; j++, index++) {
+            const product = products[index];
+
+            // Creiamo il div della colonna
+            const colDiv = document.createElement("div");
+            colDiv.classList.add("col");
+
+            // Creiamo l'immagine
+            const img = document.createElement("img");
+            img.src = product.image;
+            img.classList.add("d-block", "w-100", "clickable-product");
+            img.alt = product.title;
+
+            // Aggiungiamo l'evento per selezionare il prodotto
+            img.addEventListener("click", () => aggiornaPagina(product));
+
+            // Aggiungiamo l'immagine alla colonna e la colonna alla riga
+            colDiv.appendChild(img);
+            rowDiv.appendChild(colDiv);
+        }
+
+        // Aggiungiamo la riga al carosello-item e poi al carosello
+        item.appendChild(rowDiv);
+        carouselInner.appendChild(item);
+    }
 }
 
 // Funzione per aprire il pannello laterale
@@ -69,10 +94,7 @@ function chiudiDettagli() {
     document.getElementById('sidePanel').style.left = '-300px';
 }
 
-// Funzione per aggiornare il pannello laterale con i dettagli del prodotto
-function aggiornaDettagliPannello(product) {
-    const sidePanel = document.getElementById('sidePanel');
-    sidePanel.querySelector("h2").textContent = product.title; // Nome prodotto
-    sidePanel.querySelector(".price-detail").textContent = `€ ${product.price}`; // Prezzo
-    sidePanel.querySelector(".description-detail").textContent = product.description; // Descrizione
+// Funzione per aggiungere al carrello (simulazione)
+function aggiungiAlCarrello() {
+    alert('Prodotto aggiunto al carrello!');
 }
