@@ -15,6 +15,13 @@
     border-color: #D84040 !important;
 }
 
+.cart .parolaCasuale .btn-primary:hover
+{
+    background-color: #D84040 !important;
+    color: #EEEEEE !important;
+    border-color: #8E1616 !important;
+}
+
 .cart .btn-primary:active
 {
     background-color: #D84040 !important;
