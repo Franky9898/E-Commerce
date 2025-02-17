@@ -1,0 +1,82 @@
+.cart .btn-primary
+{
+    background-color: #8E1616 !important;
+    color: #EEEEEE !important;
+    border: 1px solid #8E1616 !important;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cart .btn-primary:hover
+{
+    background-color: #8E1616 !important;
+    color: #EEEEEE !important;
+    border-color: #D84040 !important;
+}
+
+.cart .parolaCasuale .btn-primary:hover
+{
+    background-color: #D84040 !important;
+    color: #EEEEEE !important;
+    border-color: #8E1616 !important;
+}
+
+.cart .btn-primary:active
+{
+    background-color: #D84040 !important;
+}
+
+.cart .form-control
+{
+    background-color: #EEEEEE !important;
+    color: #8E1616 !important;
+    border: 1px solid #080606 !important;
+    border-radius: 4px;
+    padding: 0.5em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cart .form-control::placeholder
+{
+    color: #8E1616 !important;
+    opacity: 0.7;
+}
+
+.cart .form-control:focus
+{
+    background-color: #EEEEEE !important;
+    color: #8E1616 !important;
+    border-color: #EEEEEE !important;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.cart .input-group .btn
+{
+    background-color: #8E1616;
+    border: none;
+    color: #EEEEEE;
+}
+
+.cart hr
+{
+    border-top: 1px solid #8E1616;
+}
+
+.cart a.btn-primary
+{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart .card
+{
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cart .card:hover
+{
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(23, 23, 23, 0.23);
+}

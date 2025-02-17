@@ -1,0 +1,77 @@
+.py-5 .row {
+  justify-content: center;
+}
+
+.btn {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.btn:hover {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.btn:active {
+  border: 1px solid black;
+}
+
+.section-footer {
+  background-color: #8e1616;
+}
+
+.text-custom {
+  color: #eeeeee;
+}
+ul.nav.flex-column {
+  --bs-nav-link-hover-color: none;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Aggiungi queste regole per modificare l'effetto focus sugli input */
+.form-control:focus {
+  border-color: #8e1616; /* Colore del bordo quando l'input è in focus */
+  box-shadow: 0 0 0 0.25rem rgba(142, 22, 22, 0.25); /* Ombra del box quando l'input è in focus */
+}
+
+.input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: none;
+  border: 1px solid #ced4da;
+}
+
+.btn-primary {
+  background: none;
+  border: 1px solid #ced4da;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #8e1616; /* Colore di sfondo al passaggio del mouse */
+  border-color: #eeeeee;
+}
+
+.pagamenti img {
+  width: 32px;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .row .col-3 {
+    flex: 1;
+  }
+  form h1 {
+    font-size: 1.5rem;
+  }
+  .section-footer {
+    padding-bottom: 10px;
+  }
+  .social-icons img {
+    width: 26px;
+    height: 26px;
+  }
+}
