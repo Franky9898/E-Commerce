@@ -101,6 +101,7 @@ body {
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     transition: left 0.3s ease; /* Animazione di apertura */
+    z-index: 9999; /* Posiziona il pannello laterale sopra gli altri elementi */
 }
 
 /* Imposta il colore del testo dei paragrafi a bianco */

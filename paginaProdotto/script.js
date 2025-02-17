@@ -1,12 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Ottieni l'ID del prodotto dall'URL
+    const productId = getProductIdFromUrl();
+
     fetch("https://fakestoreapi.com/products")
         .then(response => response.json())
         .then(data => {
-            aggiornaPagina(data[0]); // Mostra il primo prodotto nella scheda principale
+            if (productId) {
+                // Trova il prodotto con l'ID corrispondente
+                const product = data.find(p => p.id == productId);
+                if (product) {
+                    aggiornaPagina(product);
+                } else {
+                    console.error("Prodotto non trovato");
+                }
+            } else {
+                // Se non c'è un ID, mostra il primo prodotto
+                aggiornaPagina(data[0]);
+            }
             popolaCarosello(data); // Popola il carosello con prodotti cliccabili
         })
         .catch(error => console.error("Errore nel caricamento:", error));
 });
+
+// Funzione per ottenere l'ID del prodotto dall'URL
+function getProductIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('productId');
+}
 
 // Funzione per aggiornare la scheda principale con il prodotto selezionato
 function aggiornaPagina(product) {
@@ -21,6 +41,9 @@ function aggiornaPagina(product) {
 
     // Aggiorna le miniature
     aggiornaMiniature(product);
+
+    // Cambia l'URL per includere l'ID del prodotto
+    history.pushState({}, '', `PaginaProdotto.html?productId=${product.id}`);
 }
 
 // Funzione per popolare le miniature con immagini del prodotto selezionato
@@ -71,7 +94,10 @@ function popolaCarosello(products) {
             img.alt = product.title;
 
             // Aggiungiamo l'evento per selezionare il prodotto
-            img.addEventListener("click", () => aggiornaPagina(product));
+            img.addEventListener("click", () => {
+                // Reindirizza alla pagina del prodotto con l'ID corrispondente
+                window.location.href = `PaginaProdotto.html?productId=${product.id}`;
+            });
 
             // Aggiungiamo l'immagine alla colonna e la colonna alla riga
             colDiv.appendChild(img);
