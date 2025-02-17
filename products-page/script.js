@@ -1,4 +1,4 @@
-allProducts = [];
+let allProducts = [];
 
 function fetchAllProducts()
 {
@@ -47,8 +47,8 @@ function displayProducts(products)
                 </button>
                 <div class="d-flex justify-content-between align-items-center mt-2">
                   <span class="card-text">${product.price}€</span>
-                  <a href="#" class=""
-                    ><i class="fa-solid fa-cart-shopping fa-lg"></i>
+                  <a href="#" onclick="addToCart(event, '${product.id}')">
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
                   </a>
                   </div>
                 </div>
