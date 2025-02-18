@@ -1,39 +1,39 @@
 document.write(`
     <div class="header" id="divHeader">
-            <nav class="header header navbar navbar-expand-md">
-                <div class="header container">
-                    <!-- Logo -->
-                    <a class="header navbar-brand" href="#"><img src="https://placehold.co/100x50" alt="logo"></a>
-                    <button class="header navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="header navbar-toggler-icon">
-                            <i class="header fa-solid fa-bars fa-lg"></i>
-                        </span>
-                    </button>
-                    <!-- Barra di ricerca-->
-                    <div class="header collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="header d-flex justify-content-end w-100" role="search">
-                            <input class="header form-control me-2" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button class="header btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
-                        <div
-                            class="header d-flex align-items-start align-items-md-center me-auto flex-column flex-md-row">
-                            <div class="header d-flex align-items-center mt-2 ms-2 mb-2 mb-md-0 mt-md-0 ms-md-4">
-                                <button id="user-button" type="button"
-                                    class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
-                                    <i class="header fa-solid fa-user fa-lg pe-2"></i>
-                                    Login
-                                </button>
-                            </div>
-                            <div class="header d-flex align-items-center ms-2 mb-2 mb-md-0 mt-md-0">
-                                <button id="cart-button"
-                                    class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center" onclick="window.location.href = '../shoppingCart/cart.html';">
-                                    <i class="header fa-solid fa-cart-shopping fa-lg pe-2"></i>
-                                    Carrello
-                                </button>
+           <nav class="header header navbar navbar-expand-md">
+               <div class="header container">
+                   <!-- Logo -->
+                   <a class="header navbar-brand" href="../Homepage/homepage.html"><img src="../Homepage/techtab.png" width="50px" height="50px" alt="logo"></a>
+                   <button class="header navbar-toggler" type="button" data-bs-toggle="collapse"
+                       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                       aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="header navbar-toggler-icon">
+                           <i class="header fa-solid fa-bars fa-lg"></i>
+                       </span>
+                   </button>
+                   <!-- Barra di ricerca-->
+                   <div class="header collapse navbar-collapse" id="navbarSupportedContent">
+                       <form class="header d-flex justify-content-end w-100" role="search">
+                           <input class="header form-control me-2" type="search" placeholder="Search"
+                               aria-label="Search">
+                           <button class="header btn btn-outline-success" type="submit">Search</button>
+                       </form>
+                       <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
+                       <div
+                           class="header d-flex align-items-start align-items-md-center me-auto flex-column flex-md-row">
+                           <div class="header d-flex align-items-center mt-2 ms-2 mb-2 mb-md-0 mt-md-0 ms-md-4">
+                               <button id="user-button" type="button"
+                                   class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+                                   <i class="header fa-solid fa-user fa-lg pe-2"></i>
+                                   Login
+                               </button>
+                           </div>
+                           <div class="header d-flex align-items-center ms-2 mb-2 mb-md-0 mt-md-0">
+                               <button id="cart-button"
+                                   class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+                                   <i class="header fa-solid fa-cart-shopping fa-lg pe-2"></i>
+                                   Carrello
+                               </button>
 
                             </div>
                             <!-- Dropdown Menu per i bottoni su schermi piccoli -->
