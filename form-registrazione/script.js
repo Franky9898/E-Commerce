@@ -42,6 +42,7 @@ document
     login(email, password);
   });
 
+
 function registerUser(newUser) {
   fetch("http://localhost:8080/utenti", {
     method: "POST",
@@ -53,7 +54,7 @@ function registerUser(newUser) {
     .then((response) => response.json())
     .then((data) => {
       console.log("Risposta registrazione:", data);
-      document.getElementById("registerOutput").innerText = data.message;
+      document.getElementById("registerOutput").innerText = "Registrazione completata con successo";
     })
     .catch((error) => {
       console.error("Errore nella registrazione:", error);
@@ -67,11 +68,11 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     const newUser = {
-      firstName: document.getElementById("firstName").value,
-      lastName: document.getElementById("lastName").value,
-      partitaIva: document.getElementById("iva").value,
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
+      nome: document.getElementById("firstName").value,
+      cognome: document.getElementById("lastName").value,
+      pIva: document.getElementById("iva").value,
+      email: document.getElementById("emailReg").value,
+      password: document.getElementById("passwordReg").value,
     };
     registerUser(newUser);
   });
