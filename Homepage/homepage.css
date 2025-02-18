@@ -105,7 +105,7 @@ object-fit: contain;
 }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:768px) {
 .primo .carousel-item img {
 width: 100%;
 object-fit: contain;
@@ -249,7 +249,7 @@ object-fit: contain;
   }
 
 
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 768px) {
   #carouselExampleCaptions2 {
   width: 70vw;
   height: 70vh;
@@ -388,7 +388,7 @@ margin-top: 1em;
 }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
 #carouselExampleCaptions3 {
 width: 70vw;
 height: 70vh;
