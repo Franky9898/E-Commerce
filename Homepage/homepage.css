@@ -58,6 +58,13 @@ body{
   object-fit: contain;
 
 }
+.primo .carousel-item:nth-child(3) img {
+  max-height: 400px; 
+  max-width: 80%;
+  width: auto; 
+  display: block;
+  margin: auto;
+}
 
 .carousel-text {
   position: absolute;
