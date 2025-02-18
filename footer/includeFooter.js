@@ -1,6 +1,6 @@
 document.write(`
      <footer class="py-5">
-      <div class="row">
+      <div class="row px-2">
         <div class="col-3 mb-3">
           <form>
             <h1>Store</h1>
@@ -23,7 +23,7 @@ document.write(`
                 >Email address</label
               >
               <input
-                id="newsletter1"
+                id="emailaddress"
                 type="text"
                 class="form-control"
                 placeholder="Email address"

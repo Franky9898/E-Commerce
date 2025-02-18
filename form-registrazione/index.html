@@ -18,9 +18,13 @@
       href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-3/assets/css/registration-3.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/40206e0025.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../header/header.css" />
+  <link href="../footer/style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
+    <script src="../header/includeHeader.js"></script>
     <!-- Registration 3 - Bootstrap Brain Component -->
     <section class="p-3 p-md-4 p-xl-5">
       <div class="container">
@@ -33,32 +37,26 @@
               <img
                 class="img-fluid rounded mx-auto my-4"
                 loading="lazy"
-                src=""
+                src="../Homepage/techtab.png"
                 width="245"
                 height="80"
                 alt="Logo"
               />
-              <p class="mb-0">
-                Not a member yet?
-                <a href="#!" class="link-secondary text-decoration-none"
-                  >Register now</a
-                >
-              </p>
             </div>
           </div>
           <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
             <div class="p-3 p-md-4 p-xl-5">
-              <div class="row">
-                <div class="col-12">
-                  <div class="mb-5">
-                    <h2 class="h3">Registration</h2>
-                    <h3 class="fs-6 fw-normal text-secondary m-0">
-                      Enter your details to register
-                    </h3>
+              <form id="registerForm" action="#!" style="display: none;">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-5">
+                      <h2 class="h3">Registration</h2>
+                      <h3 class="fs-6 fw-normal text-secondary m-0">
+                        Enter your details to register
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <form id="registerForm" action="#!">
                 <div class="row gy-3 gy-md-4 overflow-hidden">
                   <div class="col-12">
                     <label for="firstName" class="form-label"
@@ -78,7 +76,7 @@
                       >Last Name <span class="text-danger">*</span></label
                     >
                     <input
-                      type="email"
+                      type="text"
                       class="form-control"
                       name="lastName"
                       id="lastName"
@@ -156,18 +154,8 @@
                   <div id="registerOutput"></div>
                 </div>
               </form>
-              <div class="row">
-                <div class="col-12">
-                  <hr class="mt-5 mb-4 border-secondary-subtle" />
-                  <p class="m-0 text-secondary text-end">
-                    Already have an account?
-                    <a href="#!" class="link text-decoration-none custom" id="showLogin"
-                      >Sign in</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <div id="loginForm" style="display: none;">
+
+              <div id="loginForm">
                 <div class="row">
                   <div class="col-12">
                     <div class="mb-5">
@@ -188,7 +176,7 @@
                         type="email"
                         class="form-control"
                         name="email"
-                        id="email"
+                        id="emailLogin"
                         placeholder="name@example.com"
                         required
                       />
@@ -201,7 +189,7 @@
                         type="password"
                         class="form-control"
                         name="password"
-                        id="password"
+                        id="passwordLogin"
                         value=""
                         required
                       />
@@ -216,7 +204,18 @@
                   </div>
                 </form>
               </div>
-              <div class="row">
+              <div id="avvisoSignup" class="row">
+                <div class="col-12">
+                  <hr class="mt-5 mb-4 border-secondary-subtle" />
+                  <p class="m-0 text-secondary text-end">
+                    Don't have an account?
+                    <a href="#!" class="link text-decoration-none custom" id="showLogin"
+                      >Sign up</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="row">
                 <div class="col-12">
                   <p class="mt-5 mb-4">Or sign in with</p>
                   <div class="d-flex gap-3 flex-column flex-xl-row">
@@ -267,7 +266,8 @@
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> -->
+
             </div>
           </div>
         </div>
@@ -278,6 +278,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../footer/includeFooter.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
