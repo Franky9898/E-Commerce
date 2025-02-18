@@ -17,13 +17,9 @@ function fetchAndInsertProducts(containerId) {
                             </div>
                             <div class="card-body d-flex flex-column justify-content-end">
                                 <h6 class="card-title">${product.title}</h6>
-                                <button class="btn open-modal" data-bs-toggle="modal" data-bs-target="#modal"
-                                    data-description="${product.description}">
-                                    Dettagli
-                                </button>
                                 <div class="d-flex justify-content-between align-items-center mt-2">
                                     <span class="card-text">${product.price}€</span>
-                                    <a href="#"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #8E1616"></i></a>
+                                    <a href="#" onclick="addToCart(event, '${product.id}')"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>`;

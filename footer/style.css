@@ -1,5 +1,19 @@
 .py-5 .row {
-justify-content: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.btn:hover {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.btn:active {
+  border: 1px solid black;
 }
 
 .section-footer {
@@ -14,7 +28,7 @@ ul.nav.flex-column {
 }
 .social-icons {
   display: flex;
-  gap: 0.2rem;
+  gap: 1rem;
 }
 
 /* Aggiungi queste regole per modificare l'effetto focus sugli input */
@@ -41,11 +55,23 @@ ul.nav.flex-column {
   border-color: #eeeeee;
 }
 
+.pagamenti img {
+  width: 32px;
+  height: auto;
+}
+
 @media screen and (max-width: 768px) {
   .row .col-3 {
     flex: 1;
   }
   form h1 {
     font-size: 1.5rem;
+  }
+  .section-footer {
+    padding-bottom: 10px;
+  }
+  .social-icons img {
+    width: 26px;
+    height: 26px;
   }
 }

@@ -1,0 +1,32 @@
+.form-control:focus {
+  border-color: #8e1616;
+  box-shadow: 0 0 0 0.25rem rgba(142, 22, 22, 0.25);
+}
+
+.sign {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.sign:hover {
+  background-color: #8e1616;
+  color: #eeeeee;
+}
+
+.sign:focus {
+    background: #D84040;
+}
+
+.btn-outline-primary {
+    color: #8e1616;
+    border-color: #8e1616;
+}
+
+.btn-outline-primary:hover {
+    background-color: #8e1616;
+    border-color: inherit;
+}
+
+.custom {
+    color: #8e1616;
+}

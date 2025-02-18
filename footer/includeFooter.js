@@ -1,5 +1,5 @@
 document.write(`
-    <footer class="py-5">
+     <footer class="py-5">
       <div class="row">
         <div class="col-3 mb-3">
           <form>
@@ -9,9 +9,9 @@ document.write(`
                 id="newsletter1"
                 type="text"
                 class="form-control"
-                placeholder="Email address"
+                placeholder="Città, Regione, Via"
               />
-              <button class="btn btn-primary" type="button">Subscribe</button>
+              <button class="btn" type="button">Cerca</button>
             </div>
           </form>
         </div>
@@ -28,7 +28,7 @@ document.write(`
                 class="form-control"
                 placeholder="Email address"
               />
-              <button class="btn btn-primary" type="button">Subscribe</button>
+              <button class="btn" type="button">Subscribe</button>
             </div>
           </form>
         </div>
@@ -36,18 +36,28 @@ document.write(`
           <form>
             <h1>Social</h1>
             <div class="social-icons">
-              <img src="../footer/img/x.png" alt="x" width="30rem" height="30rem" /><img
+              <img
+                src="../footer/img/x.png"
+                alt="x"
+                width="36px"
+                height="36px"
+              /><img
                 src="../footer/img/fb.webp"
                 alt="fb"
-                width="30rem"
-                height="30rem"
-              /><img src="../footer/img/yt.webp" alt="yt" width="30rem" height="30rem" />
+                width="36px"
+                height="36px"
+              /><img
+                src="../footer/img/yt.webp"
+                alt="yt"
+                width="36px"
+                height="36px"
+              />
             </div>
           </form>
         </div>
       </div>
 
-      <div class="row section-footer p-4">
+      <div class="row section-footer pt-4 px-4">
         <div class="col text-custom">
           <h5>Conosciamoci Meglio</h5>
           <ul class="nav flex-column">
@@ -208,9 +218,109 @@ document.write(`
         <div
           class="d-flex flex-column flex-sm-row justify-content-between pt-2 border-top text-custom"
         >
-          <p>© 2024 Company, Inc. All rights reserved.</p>
+          <div>
+            <p>
+              Società XYZ S.r.l. - P.IVA 12345678901 - Capitale Sociale:
+              €10.000,00 i.v. - REA: MI-1234567
+            </p>
+          </div>
+
+          <div class="flex pagamenti">
+            <img
+              class="klarna lazyloaded"
+              loading="lazy"
+              data-src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.png"
+              alt=""
+              src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/visa.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/visa.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/visa-verificato.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/visa-verificato.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/mastercard.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/mastercard.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/mastercard-securcode.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/mastercard-securcode.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/amex.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/amex.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/amex-safekey.jpg"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/amex-safekey.jpg"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/apple.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/apple.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/paypal-ico.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/paypal-ico.png"
+            />
+            <img
+              class="lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/postepay.jpg"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/postepay.jpg"
+            />
+            <img
+              class="ls-is-cached lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/agos.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/agos.png"
+            />
+            <img
+              class="ls-is-cached lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/thawte_NOT_removeokkkk.jpg"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/thawte_NOT_removeokkkk.jpg"
+            />
+            <img
+              class="ls-is-cached lazyloaded"
+              loading="lazy"
+              data-src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/biscotto_medium_embossok.png"
+              alt=""
+              src="https://static1.unieuro.it/online/_ui/desktop/theme-Unieuro-restyling/dist/images/payment/biscotto_medium_embossok.png"
+            />
+          </div>
         </div>
       </div>
+    </footer>
     </footer>
     `
 );
