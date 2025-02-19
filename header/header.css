@@ -100,8 +100,14 @@
 {
     position: fixed !important;
     top: 76px;
-    z-index: 1010;
+    z-index: 999;
     width: 100vw;
+}
+
+.access-btn {
+    color: #EEEEEE;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Personalizzazione menu dropdown */
