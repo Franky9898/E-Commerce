@@ -102,16 +102,22 @@ function displayDetails(utenti)
         const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
 
         if (confirmDelete) {
-            const userId = getUserId(); // Ottieni l'ID dell'utente
+            const token = localStorage.getItem("authToken");
+            
 
-            fetch(`/utenti/${userId}`, {  // Chiamata DELETE
-                method: 'DELETE'
+            fetch(`http://localhost:8080/utenti/cancellaUtente`, {  // Chiamata DELETE
+                method: 'DELETE',
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                  },
             })
             .then(response => response.json())
             .then(data => {
                 if (data.messaggio) {  // Se l'eliminazione è andata a buon fine
                     alert(data.messaggio);
-                    window.location.href = "/logout"; // Reindirizza l'utente dopo la cancellazione
+                    localStorage.clear();
+                    window.location.href = "../Homepage/homepage.html"; // Reindirizza l'utente dopo la cancellazione
                 } else {
                     alert(data.errore || "Errore durante l'eliminazione dell'account.");
                 }
@@ -120,5 +126,29 @@ function displayDetails(utenti)
         }
     });
 };
+
+function fetchDettagliUtente()
+{
+    const token = localStorage.getItem("authToken");
+    fetch("http://localhost:8080/utenti/dettagli", {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + token, // Invia il token
+            "Content-Type": "application/json"
+        }
+    })
+        .then((response) => response.json())
+        .then((utenti) =>
+        {
+            console.log(utenti);
+            displayDetails(utenti);
+        })
+        .catch((error) => console.error("Errore nel recupero dei dettagli utente", error));
+}
+
+document.addEventListener("DOMContentLoaded", () =>
+{
+    fetchDettagliUtente();
+});
 
 
