@@ -383,11 +383,31 @@ function updateUserUI() {
             </div>
         `;
 
-    // Aggiungi l'event listener per il logout
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      localStorage.removeItem("authToken");
-      updateUserUI();
-    });
+    // Event listener per il logout
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+        const token = localStorage.getItem("authToken");
+
+        if (!token) return;
+
+        try {
+          const response = await fetch("http://localhost:8080/api/logout", {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (response.ok) {
+            localStorage.removeItem("authToken"); // Rimuove il token dal localStorage solo se il logout è andato a buon fine
+            updateUserUI(); // Aggiorna l'interfaccia utente
+          } else {
+            console.error("Errore nel logout:", await response.json());
+          }
+        } catch (error) {
+          console.error("Errore di connessione:", error);
+        }
+      });
   } else {
     // Se l'utente non è autenticato, mostra il bottone di login
     userContainer.innerHTML = `

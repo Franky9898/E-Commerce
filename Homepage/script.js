@@ -20,7 +20,7 @@ function fetchAndInsertProducts(containerId) {
                                 <div class="d-flex justify-content-between align-items-center mt-2">
                                     <span class="card-text">${product.price}€</span>
                                     <a href="#" onclick="addToCart(event, '${product.id}')"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-                       
+
                                 </div>
                             </div>
                         </div>`;
@@ -29,12 +29,6 @@ function fetchAndInsertProducts(containerId) {
         container.innerHTML += card;
       });
     });
-
-
-    
-  
- 
-  
 }
 
 // Chiama la funzione per riempire ogni sezione
