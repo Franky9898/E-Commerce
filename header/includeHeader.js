@@ -376,8 +376,8 @@ function updateUserUI() {
                     <i class="header fa-solid fa-user fa-lg pe-2"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
-                    <li><a class="access-btn dropdown-item" href="../orders/orders.html">Ordini</a></li>
-                    <li><a class="access-btn dropdown-item" href="../profile/profile.html">Profilo</a></li>
+                    <li><a class="access-btn dropdown-item" href="../orderDetails/orderDetails.html">I miei ordini</a></li>
+                    <li><a class="access-btn dropdown-item" href="../profilo/profilo.html">Profilo</a></li>
                     <li><button class="access-btn dropdown-item" id="logout-btn">Logout</button></li>
                 </ul>
             </div>
