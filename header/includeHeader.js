@@ -404,10 +404,10 @@ function updateUserUI() {
     // </button>
 
     // Aggiungi l'event listener per il login simulato
-    document.getElementById("login-btn").addEventListener("click", () => {
-      localStorage.setItem("authToken", "token-di-esempio"); // Qui metteresti il vero token ricevuto dal backend
-      updateUserUI();
-    });
+    // document.getElementById("login-btn").addEventListener("click", () => {
+    //   localStorage.setItem("authToken", "token-di-esempio"); // Qui metteresti il vero token ricevuto dal backend
+    //   updateUserUI();
+    // });
   }
 }
 

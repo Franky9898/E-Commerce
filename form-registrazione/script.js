@@ -39,8 +39,8 @@ document
   .getElementById("loginForm")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const email = document.getElementById("emailLogin").value;
+    const password = document.getElementById("passwordLogin").value;
     login(email, password);
   });
 
@@ -69,9 +69,9 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     const newUser = {
-      firstName: document.getElementById("firstName").value,
-      lastName: document.getElementById("lastName").value,
-      partitaIva: document.getElementById("iva").value,
+      nome: document.getElementById("firstName").value,
+      cognome: document.getElementById("lastName").value,
+      pIva: document.getElementById("iva").value,
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     };
