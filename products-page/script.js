@@ -50,7 +50,7 @@ function displayProducts(products)
                   Dettagli
                 </button>
                 <div class="d-flex justify-content-between align-items-center mt-2">
-                  <span class="card-text">${product.price}€</span>
+                  <span class="card-text">${Number(product.price).toFixed(2)}€</span>
                   <a href="#" onclick="addToCart(event, '${product.id}')">
                     <i class="fa-solid fa-cart-shopping fa-lg"></i>
                   </a>

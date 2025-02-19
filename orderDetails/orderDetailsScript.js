@@ -24,18 +24,16 @@ function saveOrder() {
     const totalAmount = total(subtotal);
 
     const orderPayload = {
-        date: new Date().toISOString(),
+        date: new Date().getTime(),
         totale: totalAmount,
-        utente: {
-            id: user.id,
-        },
         prodotti: cart
     };
-
+    const token = localStorage.getItem("authToken");
     fetch("http://localhost:8080/ordini", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
         },
         body: JSON.stringify(orderPayload)
     })
@@ -49,6 +47,7 @@ function saveOrder() {
     .then(data => {
         localStorage.removeItem("cart");
         alert("Ordine salvato con successo!");
+        window.location.href = "../orderDetails/orderDetails.html";
     })
     .catch(error => {
         console.error("Errore:", error);

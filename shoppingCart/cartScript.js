@@ -110,7 +110,7 @@ function shippingCost(subtotal)
 
 function total(subtotal)
 {
-  let result = (subtotal < 50 && subtotal > 0) ? subtotal + 15 : subtotal;
+  let result = (subtotal < 50 && subtotal > 0) ? (Number (subtotal) + 15).toFixed(2) : subtotal;
   return result;
 }
 
