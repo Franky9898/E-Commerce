@@ -31,7 +31,11 @@ function displayProducts(products)
     {
       return `
           <div class="card" id="${product.id}">
-              <div class="d-flex justify-content-center mt-5"><img src="${product.image}" class="card-img-top" style="width: 6rem;" alt="${product.title}"></div>
+              <div class="d-flex justify-content-center mt-5">
+              <a href="../paginaProdotto/PaginaProdotto.html?productId=${product.id}">
+              <img src="${product.image}" class="card-img-top" style="width: 6rem;" alt="${product.title}" >
+               </a>
+              </div>
               <div class="card-body card-body d-flex flex-column justify-content-end">
                 <div>
                 <h6 class="card-title">

@@ -30,7 +30,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Rende il contenitore alto quanto l'intera finestra */
+    height: auto; /* Rende il contenitore alto quanto l'intera finestra */
     padding: 20px;
 }
 

@@ -150,18 +150,18 @@ document.write(`
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Bracciali</a></li>
-                                    <li><a class="header dropdown-item" href="#">Bracciale 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=5">Bracciale 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Bracciale 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Bracciale 3</a></li>
                                 </ul>
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Anelli</a></li>
-                                    <li><a class="header dropdown-item" href="#">Anello 1</a></li>
-                                    <li><a class="header dropdown-item" href="#">Anello 2</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=6">Anello 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=7">Anello 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Anello 3</a></li>
                                 </ul>
                                 <ul class="header big-menu">
-                                    <li><a class="header dropdown-item" href="#">Orecchini</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=8">Orecchini</a></li>
                                     <li><a class="header dropdown-item" href="#">Orecchini 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Orecchini 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Orecchini 3</a></li>
@@ -176,13 +176,13 @@ document.write(`
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Hard Disk</a></li>
-                                    <li><a class="header dropdown-item" href="#">HDD 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=9">HDD 1</a></li>
                                     <li><a class="header dropdown-item" href="#">SSD</a></li>
                                     <li><a class="header dropdown-item" href="#">HDD 2</a></li>
                                 </ul>
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Monitor</a></li>
-                                    <li><a class="header dropdown-item" href="#">Monitor</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=14">Monitor</a></li>
                                     <li><a class="header dropdown-item" href="#">TV 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Tv 2</a></li>
                                 </ul>
@@ -202,13 +202,13 @@ document.write(`
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Magliette</a></li>
-                                    <li><a class="header dropdown-item" href="#">Maglietta 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=20">Maglietta 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Maglietta 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Maglietta 3</a></li>
                                 </ul>
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Giacche</a></li>
-                                    <li><a class="header dropdown-item" href="#">Giacca 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=16">Giacca 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Giacca 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Giacca 3</a></li>
                                 </ul>
@@ -228,13 +228,13 @@ document.write(`
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Magliette</a></li>
-                                    <li><a class="header dropdown-item" href="#">Maglietta 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=2">Maglietta 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Maglietta 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Maglietta 3</a></li>
                                 </ul>
                                 <ul class="header big-menu">
                                     <li><a class="header dropdown-item" href="#">Giacche</a></li>
-                                    <li><a class="header dropdown-item" href="#">Giacca 1</a></li>
+                                    <li><a class="header dropdown-item" href="../paginaProdotto/PaginaProdotto.html?productId=3">Giacca 1</a></li>
                                     <li><a class="header dropdown-item" href="#">Giacca 2</a></li>
                                     <li><a class="header dropdown-item" href="#">Giacca 3</a></li>
                                 </ul>
@@ -376,18 +376,38 @@ function updateUserUI() {
                     <i class="header fa-solid fa-user fa-lg pe-2"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
-                    <li><a class="access-btn dropdown-item" href="../orders/orders.html">Ordini</a></li>
-                    <li><a class="access-btn dropdown-item" href="../profile/profile.html">Profilo</a></li>
+                    <li><a class="access-btn dropdown-item" href="../orderDetails/orderDetails.html">I miei ordini</a></li>
+                    <li><a class="access-btn dropdown-item" href="../profilo/profilo.html">Profilo</a></li>
                     <li><button class="access-btn dropdown-item" id="logout-btn">Logout</button></li>
                 </ul>
             </div>
         `;
 
-    // Aggiungi l'event listener per il logout
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      localStorage.removeItem("authToken");
-      updateUserUI();
-    });
+    // Event listener per il logout
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+        const token = localStorage.getItem("authToken");
+
+        if (!token) return;
+
+        try {
+          const response = await fetch("http://localhost:8080/api/logout", {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (response.ok) {
+            localStorage.removeItem("authToken"); // Rimuove il token dal localStorage solo se il logout è andato a buon fine
+            updateUserUI(); // Aggiorna l'interfaccia utente
+          } else {
+            console.error("Errore nel logout:", await response.json());
+          }
+        } catch (error) {
+          console.error("Errore di connessione:", error);
+        }
+      });
   } else {
     // Se l'utente non è autenticato, mostra il bottone di login
     userContainer.innerHTML = `

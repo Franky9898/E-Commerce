@@ -1,28 +1,65 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const editButton = document.getElementById("editButton");
-    const inputs = document.querySelectorAll("input");
 
-    editButton.addEventListener("click", function () {
-        if (editButton.innerText === "Edit") {
-            inputs.forEach(input => input.removeAttribute("disabled")); // Rendi modificabili i campi
-            editButton.innerText = "Save"; // Cambia testo pulsante
-        } else {
-            inputs.forEach(input => input.setAttribute("disabled", true)); // Disabilita modifiche
-            editButton.innerText = "Edit"; // Ripristina pulsante originale
+function displayDetails(utenti)
+{
+    let utenteArray = [utenti];
+    const utente = utenteArray
+        .map((utente) =>
+        {
+            return `
+          
+    <div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Nome</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" id="nome" class="form-control" value="${utente.nome}" disabled>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Cognome</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" id="cognome" class="form-control" value="${utente.cognome}" disabled>
+                </div>
+            </div>
+            <hr>
 
-            // Simula il salvataggio dei dati (qui si potrebbe inviare a un backend)
-            console.log("Dati aggiornati:");
-            inputs.forEach(input => console.log(input.id + ": " + input.value));
-        }
-    });
-});
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Partita Iva</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" id="pIva" class="form-control" value="${utente.pIva}" disabled>
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 d-flex justify-content-between">
+                    <button id="editButton" class="btn btn-danger">Edit</button>
+                    <button id="deleteAccountButton" class="btn btn-danger">Elimina Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+            `;
+        })
+        .join("");
+    document.getElementById("container-gutter").innerHTML = utente;
 
-document.addEventListener("DOMContentLoaded", function () {
     const deleteButton = document.getElementById("deleteAccountButton");
 
-    deleteButton.addEventListener("click", function () {
+    deleteButton.addEventListener("click", function ()
+    {
         const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
-        if (confirmDelete) {
+        if (confirmDelete)
+        {
             alert("Account eliminato con successo!"); // Qui puoi chiamare un'API per la cancellazione effettiva.
             // window.location.href = "logout.html"; // Reindirizza l'utente se necessario
         }
