@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if we are on orderDetails.html
     if (window.location.pathname.includes("orderDetails.html")) {
         fetchOrders();
     }
 
-    // Attach event listener to the payment button
     const pagamentoButton = document.getElementById("bottonePagamento");
     if (pagamentoButton) {
         pagamentoButton.addEventListener("click", saveOrder);
     }
 });
 
-// Function to save the order (POST request)
+// POST
 function saveOrder() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
@@ -55,9 +53,9 @@ function saveOrder() {
     });
 }
 
-// Function to fetch orders (GET request)
+// GET
 function fetchOrders() {
-    const token = localStorage.getItem("authToken"); // Get the token from localStorage (or sessionStorage)
+    const token = localStorage.getItem("authToken"); 
 
     if (!token) {
         console.error("Token non presente, l'utente deve essere autenticato.");

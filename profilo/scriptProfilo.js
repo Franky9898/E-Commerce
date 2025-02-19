@@ -90,7 +90,7 @@ function displayDetails(utenti)
             const updatedData = {};
             inputs.forEach(input => {
                 if (input.id === "pIva" && input.value.trim() === "" || input.value === "null") {
-                    updatedData[input.id] = null; // Invia null se il campo è vuoto
+                    updatedData[input.id] = null; // Invia null se il campo è vuoto o contiene null (che è il default)
                 } else {
                     updatedData[input.id] = input.value;
                 }
