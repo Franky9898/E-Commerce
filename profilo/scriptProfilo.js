@@ -29,3 +29,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const deleteButton = document.getElementById("deleteAccountButton");
+
+    deleteButton.addEventListener("click", function () {
+        const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
+
+        if (confirmDelete) {
+            const userId = getUserId(); // Ottieni l'ID dell'utente
+
+            fetch(`/utenti/${userId}`, {  // Chiamata DELETE
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.messaggio) {  // Se l'eliminazione è andata a buon fine
+                    alert(data.messaggio);
+                    window.location.href = "/logout"; // Reindirizza l'utente dopo la cancellazione
+                } else {
+                    alert(data.errore || "Errore durante l'eliminazione dell'account.");
+                }
+            })
+            .catch(error => console.error('Errore:', error));
+        }
+    });
+});
+

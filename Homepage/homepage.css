@@ -58,15 +58,9 @@ body{
   object-fit: contain;
 
 }
-.primo .carousel-item:nth-child(3) img {
-  max-height: 400px; 
-  max-width: 80%;
-  width: auto; 
-  display: block;
-  margin: auto;
-}
 
-.carousel-text {
+
+ .carousel-text {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -75,18 +69,22 @@ body{
   border-radius: 10px;
   max-width: 30%;
   text-align: center;
+  font-size: small;
 }
 
 .carousel-text.left {
-  left: 5%;
+  left: 0.5%;
   text-align: left;
   color: #8E1616;
+  
+  
   ;
 }
 
 .carousel-text.right {
-  right: 5%;
+  right: 0.5%;
   text-align: right;
+  
 
 }
 
