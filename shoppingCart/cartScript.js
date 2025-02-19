@@ -95,7 +95,7 @@ function subtotalCart(products)
   {
     subtotal += product.price * product.quantity;
   });
-  return subtotal;
+  return subtotal.toFixed(2); 
 }
 
 function shippingCost(subtotal) 
@@ -111,7 +111,7 @@ function shippingCost(subtotal)
 function total(subtotal)
 {
   let result = (subtotal < 50 && subtotal > 0) ? subtotal + 15 : subtotal;
-  return parseFloat(result.toFixed(2));
+  return result;
 }
 
 function removeFromCart(productId)

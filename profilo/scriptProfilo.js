@@ -1,20 +1,4 @@
 
-
-document.addEventListener("DOMContentLoaded", function ()
-{
-    const deleteButton = document.getElementById("deleteAccountButton");
-
-    deleteButton.addEventListener("click", function ()
-    {
-        const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
-        if (confirmDelete)
-        {
-            alert("Account eliminato con successo!"); // Qui puoi chiamare un'API per la cancellazione effettiva.
-            // window.location.href = "logout.html"; // Reindirizza l'utente se necessario
-        }
-    });
-});
-
 function displayDetails(utenti)
 {
     let utenteArray = [utenti];
@@ -68,6 +52,18 @@ function displayDetails(utenti)
         })
         .join("");
     document.getElementById("container-gutter").innerHTML = utente;
+
+    const deleteButton = document.getElementById("deleteAccountButton");
+
+    deleteButton.addEventListener("click", function ()
+    {
+        const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
+        if (confirmDelete)
+        {
+            alert("Account eliminato con successo!"); // Qui puoi chiamare un'API per la cancellazione effettiva.
+            // window.location.href = "logout.html"; // Reindirizza l'utente se necessario
+        }
+    });
 
     const editButton = document.getElementById("editButton");
     editButton.addEventListener("click", function () {
