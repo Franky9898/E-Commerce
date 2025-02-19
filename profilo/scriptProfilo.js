@@ -52,21 +52,50 @@ function displayDetails(utenti)
         })
         .join("");
     document.getElementById("container-gutter").innerHTML = utente;
-
-    const deleteButton = document.getElementById("deleteAccountButton");
-
-    deleteButton.addEventListener("click", function ()
-    {
-        const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
-        if (confirmDelete)
-        {
-            alert("Account eliminato con successo!"); // Qui puoi chiamare un'API per la cancellazione effettiva.
-            // window.location.href = "logout.html"; // Reindirizza l'utente se necessario
-        }
+    const editButton = document.getElementById("editButton");
+    editButton.addEventListener("click", function () {
+        const inputs = document.querySelectorAll("input");
+        if (editButton.innerText.trim() === "Edit") {
+            inputs.forEach(input => input.removeAttribute("disabled"));
+            editButton.innerText = "Save";
+        } else {
+            // Raccoglie i dati aggiornati in un oggetto
+            const updatedData = {};
+            inputs.forEach(input => {
+                if (input.id === "pIva" && input.value.trim() === "" || input.value === "null") {
+                    updatedData[input.id] = null; // Invia null se il campo è vuoto
+                } else {
+                    updatedData[input.id] = input.value;
+                }
+            });
+            // Disabilita nuovamente gli input e ripristina il testo del pulsante
+            inputs.forEach(input => input.setAttribute("disabled", true));
+            editButton.innerText = "Edit";
+            const token = localStorage.getItem("authToken");
+            fetch("http://localhost:8080/utenti/modificaProfilo", {
+              method: "PUT",
+              headers: {
+                "Authorization": "Bearer " + token,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(updatedData)
+            })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error("Errore nella richiesta");
+                }
+                return response.json();
+              })
+              .then(result => {
+                console.log("Dati aggiornati:", result);
+              })
+              .catch(error => console.error("Errore aggiornamento dati:", error));
+          }
     });
-});
+    
 
-document.addEventListener("DOMContentLoaded", function () {
+
+
     const deleteButton = document.getElementById("deleteAccountButton");
 
     deleteButton.addEventListener("click", function () {
@@ -90,5 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Errore:', error));
         }
     });
-});
+};
+
 
