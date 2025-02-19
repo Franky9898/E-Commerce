@@ -391,7 +391,7 @@ function updateUserUI() {
   } else {
     // Se l'utente non è autenticato, mostra il bottone di login
     userContainer.innerHTML = `
-            <button id="login-btn" type="button" class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+            <button id="login-btn" type="button" onclick="window.location.href='../form-registrazione/index.html'" class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
                 <i class="header fa-solid fa-user fa-lg pe-2"></i> Login
             </button>
 

@@ -27,6 +27,7 @@ function login(email, password) {
       // Salva il token nel localStorage
       if (data.token) {
         localStorage.setItem("authToken", data.token);
+        window.location.href = "../Homepage/homepage.html"
       }
     })
     .catch((error) => {
@@ -55,7 +56,10 @@ function registerUser(newUser) {
     .then((response) => response.json())
     .then((data) => {
       console.log("Risposta registrazione:", data);
-      document.getElementById("registerOutput").innerText = data.message;
+      // Se il server non restituisce un messaggio, evita di mostrare "undefined"
+      const message = data.message ? data.message : "Registrazione avvenuta con successo!";
+      document.getElementById("registerOutput").innerText = message;
+
     })
     .catch((error) => {
       console.error("Errore nella registrazione:", error);
