@@ -1,4 +1,3 @@
-
 function displayDetails(utenti)
 {
     let utenteArray = [utenti];
@@ -54,14 +53,29 @@ function displayDetails(utenti)
     document.getElementById("container-gutter").innerHTML = utente;
 
     const deleteButton = document.getElementById("deleteAccountButton");
-
-    deleteButton.addEventListener("click", function ()
-    {
+    deleteButton.addEventListener("click", function () {
         const confirmDelete = confirm("Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile!");
-        if (confirmDelete)
-        {
-            alert("Account eliminato con successo!"); // Qui puoi chiamare un'API per la cancellazione effettiva.
-            // window.location.href = "logout.html"; // Reindirizza l'utente se necessario
+        if (confirmDelete) {
+            const token = localStorage.getItem("authToken");
+
+            fetch("http://localhost:8080/utenti/cancellaUtente", {  // Chiamata DELETE
+                method: 'DELETE',
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                  },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.messaggio) {  // Se l'eliminazione è andata a buon fine
+                    alert(data.messaggio);
+                    localStorage.clear();
+                    window.location.href = "../Homepage/homepage.html"; // Reindirizza l'utente dopo la cancellazione
+                } else {
+                    alert(data.errore || "Errore durante l'eliminazione dell'account.");
+                }
+            })
+            .catch(error => console.error('Errore:', error));
         }
     });
 
