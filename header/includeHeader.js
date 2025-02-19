@@ -21,12 +21,8 @@ document.write(`
                        <!-- Icone, flex-column serve per mettere in verticale gli items quando collassa, flex-md-row per metterli in riga quando lo schermo è medio-->
                        <div
                            class="header d-flex align-items-start align-items-md-center me-auto flex-column flex-md-row">
-                           <div class="header d-flex align-items-center mt-2 ms-2 mb-2 mb-md-0 mt-md-0 ms-md-4">
-                               <button id="user-button" type="button"
-                                   class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
-                                   <i class="header fa-solid fa-user fa-lg pe-2"></i>
-                                   Login
-                               </button>
+                           <div id="user-container" class="header d-flex align-items-center mt-2 ms-2 mb-2 mb-md-0 mt-md-0 ms-md-4">
+
                            </div>
                            <div class="header d-flex align-items-center ms-2 mb-2 mb-md-0 mt-md-0">
                                <button id="cart-button"
@@ -363,65 +359,109 @@ document.write(`
         </div>
 `);
 
-//Funzione per non far sovrapporre il big-menu con il contenuto delle pagine
-document.addEventListener("DOMContentLoaded", function ()
-{
-    const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
-    const divSep = document.getElementById("divisoreHeader");
-    let openDropdown = null; // Tiene traccia di quale menù è aperto (una boolean non funziona per qualche motivo)
-    if (menuItems.length > 0)
-    {
-        menuItems.forEach(menuItem =>
-        {
-            menuItem.addEventListener("click", function ()
-            {
-                if (window.innerWidth >= 768)
-                {
-                    if (openDropdown === menuItem)
-                    {
-                        divSep.style.height = "150px"; // Il div si riduce
-                        openDropdown = null;
-                    } else
-                    {
-                        divSep.style.height = "370px"; // Il div si allarga
-                        openDropdown = menuItem;
-                    }
-                }
-            });
-        });
-    }
-    window.addEventListener("resize", function () // Quando la finestra si riduce, il div si riduce a prescindere
-    {
-        if (window.innerWidth < 768)
-        {
-            divSep.style.height = "150px";
-            openDropdown = null;
-        }
+document.addEventListener("DOMContentLoaded", updateUserUI);
+
+function updateUserUI() {
+  const userContainer = document.getElementById("user-container");
+  if (!userContainer) return;
+
+  const token = localStorage.getItem("authToken");
+
+  if (token) {
+    // Se l'utente è autenticato, mostra il dropdown
+    userContainer.innerHTML = `
+            <div class="dropdown">
+                <button class="header btn btn-outline-success dropdown-toggle d-inline-flex align-items-center" style="height=;height: 42px;"
+                    type="button" id="profile-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="header fa-solid fa-user fa-lg pe-2"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
+                    <li><a class="access-btn dropdown-item" href="../orders/orders.html">Ordini</a></li>
+                    <li><a class="access-btn dropdown-item" href="../profile/profile.html">Profilo</a></li>
+                    <li><button class="access-btn dropdown-item" id="logout-btn">Logout</button></li>
+                </ul>
+            </div>
+        `;
+
+    // Aggiungi l'event listener per il logout
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("authToken");
+      updateUserUI();
     });
+  } else {
+    // Se l'utente non è autenticato, mostra il bottone di login
+    userContainer.innerHTML = `
+            <button id="login-btn" type="button" onclick="window.location.href='../form-registrazione/index.html'" class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+                <i class="header fa-solid fa-user fa-lg pe-2"></i> Login
+            </button>
+
+        `;
+
+    //     <button id="user-button" type="button"
+    //     class="header btn btn-outline-success d-inline-flex align-items-center justify-content-center">
+    //     <i class="header fa-solid fa-user fa-lg pe-2"></i>
+    //     Login
+    // </button>
+
+    // Aggiungi l'event listener per il login simulato
+    // document.getElementById("login-btn").addEventListener("click", () => {
+    //   localStorage.setItem("authToken", "token-di-esempio"); // Qui metteresti il vero token ricevuto dal backend
+    //   updateUserUI();
+    // });
+  }
+}
+
+//Funzione per non far sovrapporre il big-menu con il contenuto delle pagine
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".nav-item.dropdown.mx-1"); // Seleziona tutti i pulsanti dropdown
+  const divSep = document.getElementById("divisoreHeader");
+  let openDropdown = null; // Tiene traccia di quale menù è aperto (una boolean non funziona per qualche motivo)
+  if (menuItems.length > 0) {
+    menuItems.forEach((menuItem) => {
+      menuItem.addEventListener("click", function () {
+        if (window.innerWidth >= 768) {
+          if (openDropdown === menuItem) {
+            divSep.style.height = "150px"; // Il div si riduce
+            openDropdown = null;
+          } else {
+            divSep.style.height = "370px"; // Il div si allarga
+            openDropdown = menuItem;
+          }
+        }
+      });
+    });
+  }
+  window.addEventListener(
+    "resize",
+    function () // Quando la finestra si riduce, il div si riduce a prescindere
+    {
+      if (window.innerWidth < 768) {
+        divSep.style.height = "150px";
+        openDropdown = null;
+      }
+    }
+  );
 });
 
-document.addEventListener("DOMContentLoaded", function ()
-{
-    // Funzione per ottenere i parametri query dall'URL
-    function getQueryParam(param)
-    {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  // Funzione per ottenere i parametri query dall'URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
 
-    const category = getQueryParam('filter');
-    console.log("Filter query parameter:", category);
-    if (category)
-    {
-        const checkbox = document.querySelector(`input[name="filter"][value="${category}"]`);
-        if (checkbox)
-        {
-            checkbox.checked = true;
-            checkbox.dispatchEvent(new Event('change', { bubbles: true })); // Triggera manualmente l'evento onchange
-        }
-        fetchProductsByCategories(category);
-    } else
-    {
-        fetchAllProducts();
+  const category = getQueryParam("filter");
+  console.log("Filter query parameter:", category);
+  if (category) {
+    const checkbox = document.querySelector(
+      `input[name="filter"][value="${category}"]`
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+      checkbox.dispatchEvent(new Event("change", { bubbles: true })); // Triggera manualmente l'evento onchange
     }
+    fetchProductsByCategories(category);
+  } else {
+    fetchAllProducts();
+  }
 });

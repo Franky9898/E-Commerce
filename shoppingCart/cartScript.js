@@ -30,10 +30,7 @@ function displayCartProducts(products)
                           <span class="mx-2">${product.quantity}</span>
                         <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${product.id}', 1)">+</button>
                       </span>
-                      
-                      
                     </div>
-
                     <button class="btn btn btn-primary" onclick="removeFromCart(${product.id})">Rimuovi dal carrello</button>
                   </div>
                 </div>
@@ -113,7 +110,8 @@ function shippingCost(subtotal)
 
 function total(subtotal)
 {
-  return (subtotal < 50 && subtotal > 0) ? subtotal + 15 : subtotal;
+  let result = (subtotal < 50 && subtotal > 0) ? subtotal + 15 : subtotal;
+  return parseFloat(result.toFixed(2));
 }
 
 function removeFromCart(productId)
