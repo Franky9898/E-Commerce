@@ -433,5 +433,17 @@ h2 {
   line-height: 1.6;
 }
 
+.added-message {
+  background-color: #8e1616;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: fixed;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
 
 

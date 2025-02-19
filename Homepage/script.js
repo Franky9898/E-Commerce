@@ -41,3 +41,27 @@ function fetchAndInsertProducts(containerId) {
 fetchAndInsertProducts("carousel-container-1");
 fetchAndInsertProducts("carousel-container-2");
 fetchAndInsertProducts("carousel-container-3");
+
+
+function addToCart(event, productId) {
+  event.preventDefault(); // Evita il comportamento predefinito del link
+
+  // Crea un elemento per mostrare il messaggio
+  let message = document.createElement("div");
+  message.innerText = "Prodotto aggiunto al carrello!";
+  message.className = "added-message"; // Classe per lo stile
+  document.body.appendChild(message);
+
+  // Posiziona il messaggio vicino all'icona cliccata
+  let icon = event.target;
+  let rect = icon.getBoundingClientRect();
+  message.style.position = "absolute";
+  message.style.left = `${rect.left + window.scrollX}px`;
+  message.style.top = `${rect.top + window.scrollY - 30}px`;
+
+  // Rimuove il messaggio dopo 1.5 secondi
+  setTimeout(() => {
+      message.remove();
+  }, 1500);
+}
+
