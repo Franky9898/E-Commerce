@@ -249,7 +249,7 @@ document.write(`
                         <li class="header nav-item dropdown mx-1">
                             <a class="header nav-link dropdown-toggle px-0" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Quadri
                             </a>
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
@@ -275,7 +275,7 @@ document.write(`
                         <li class="header nav-item dropdown mx-1">
                             <a class="header nav-link dropdown-toggle px-0" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Fotocamere
                             </a>
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
@@ -301,7 +301,7 @@ document.write(`
                         <li class="header nav-item dropdown mx-1">
                             <a class="header nav-link dropdown-toggle px-0" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Automobili
                             </a>
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
@@ -327,7 +327,7 @@ document.write(`
                         <li class="header nav-item dropdown mx-1">
                             <a class="header nav-link dropdown-toggle px-0" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                BohUnPo'DiTutto
                             </a>
                             <div class="header dropdown-menu">
                                 <ul class="header big-menu">
@@ -399,8 +399,9 @@ function updateUserUI() {
           });
 
           if (response.ok) {
-            localStorage.removeItem("authToken"); // Rimuove il token dal localStorage solo se il logout è andato a buon fine
+            localStorage.clear(); // Rimuove il token dal localStorage solo se il logout è andato a buon fine
             updateUserUI(); // Aggiorna l'interfaccia utente
+            window.location.href = "../Homepage/homepage.html"; 
           } else {
             console.error("Errore nel logout:", await response.json());
           }

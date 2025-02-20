@@ -20,7 +20,7 @@ function fetchAndInsertProducts(containerId) {
                             <div class="card-body d-flex flex-column justify-content-end">
                                 <h6 class="card-title">${product.title}</h6>
                                 <div class="d-flex justify-content-between align-items-center mt-2">
-                                    <span class="card-text">${product.price}€</span>
+                                    <span class="card-text">${Number(product.price).toFixed(2)}€</span>
                                     <a href="#" onclick="addToCart(event, '${product.id}')"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
 
                                 </div>

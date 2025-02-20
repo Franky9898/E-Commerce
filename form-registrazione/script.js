@@ -60,7 +60,7 @@ function registerUser(newUser) {
       // Se il server non restituisce un messaggio, evita di mostrare "undefined"
       const message = data.message ? data.message : "Registrazione avvenuta con successo!";
       document.getElementById("registerOutput").innerText = message;
-
+      window.location.href = "../form-registrazione/index.html";
     })
     .catch((error) => {
       console.error("Errore nella registrazione:", error);
@@ -69,16 +69,15 @@ function registerUser(newUser) {
     });
 }
 
-document
-  .getElementById("registerForm")
+document.getElementById("registerForm")
   .addEventListener("submit", function (event) {
     event.preventDefault();
     const newUser = {
       nome: document.getElementById("firstName").value,
       cognome: document.getElementById("lastName").value,
       pIva: document.getElementById("iva").value,
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
+      email: document.getElementById("emailReg").value,
+      password: document.getElementById("passwordReg").value,
     };
     registerUser(newUser);
   });
